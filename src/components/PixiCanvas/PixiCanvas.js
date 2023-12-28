@@ -17,17 +17,70 @@ function init() {
     
 }
 
+function saveLayout() {
+    let ledBarConfigs = [];
+    for (const [key, value] of Object.entries(inventoryManager.ledBars)) {
+        ledBarConfigs.push(value.ledBar.save());
+    }
+    return ledBarConfigs;
+}
+
+function loadLayout(ledBarConfigs) {
+    ledBarConfigs.forEach(ledBarData => {
+        let ledbar = new LedBar(ledBarData.startPoint.coord, ledBarData.endPoint.coord, ledBarData.id);
+        inventoryManager.registerLedBar(ledbar);
+    });
+    // for each ledbar, we have to set some values
+    ledBarConfigs.forEach(ledBarData => {
+        const ledbar = inventoryManager.getLedBarById(ledBarData.id);
+        ledbar.startPoint.id = ledBarData.startPoint.id;
+        ledbar.endPoint.id = ledBarData.endPoint.id;
+        ledbar.startPoint.isStartPoint = ledBarData.startPoint.isStartPoint;
+        ledbar.endPoint.isStartPoint = ledBarData.endPoint.isStartPoint; 
+        ledbar.startPoint.sibling = inventoryManager.getHandleById(ledBarData.startPoint.sibling);
+        ledbar.endPoint.sibling = inventoryManager.getHandleById(ledBarData.endPoint.sibling);
+    });
+    ledBarConfigs.forEach(ledBarData => {
+        const ledbar = inventoryManager.getLedBarById(ledBarData.id);
+        if (ledBarData.startPoint.linkedHandle !== null){
+            ledbar.startPoint.linkedHandle = inventoryManager.getHandleById(ledBarData.startPoint.linkedHandle);
+        }
+        if (ledBarData.endPoint.linkedHandle !== null){
+            ledbar.endPoint.linkedHandle = inventoryManager.getHandleById(ledBarData.endPoint.linkedHandle);
+        }
+    });
+
+    ledBarConfigs.forEach(ledBarData => {
+        const ledbar = inventoryManager.getLedBarById(ledBarData.id);
+        if (ledBarData.startPoint.cable !== null && ledBarData.startPoint.cable.startHandle === ledBarData.startPoint.id){
+            ledbar.startPoint.cable = new Cable(inventoryManager.getHandleById(ledBarData.startPoint.cable.startHandle), inventoryManager.getHandleById(ledBarData.startPoint.cable.endHandle));
+        }
+        if (ledBarData.endPoint.cable !== null && ledBarData.endPoint.cable.startHandle === ledBarData.endPoint.id){
+            ledbar.endPoint.cable = new Cable(inventoryManager.getHandleById(ledBarData.endPoint.cable.startHandle), inventoryManager.getHandleById(ledBarData.endPoint.cable.endHandle));
+        }
+    });
+}
+
 // powersource is a small square with 1 unmovable handle. it will store the ledbarid of the connected ledbar (if any)
 class PowerSource {
     constructor(coord) {
         this.coord = coord; // { x: number, y: number }
-        this.id = 0;
-        this.handle = new Handle(coord, -1, 0xFFFF00, 0, true); // { x: number, y: number }
+        this.id = -1;
+        this.handle = new Handle(coord, -1, 0xFFFF00, -1, true); // { x: number, y: number }
+        inventoryManager.registerHandle(this.handle);
     }
 
     updatePosition(newCoord) {
         this.coord = newCoord;
     }
+
+    save() {
+        return {
+            coord: this.coord,
+            id: this.id,
+            handle: this.handle.save()
+        };
+    }   
 
 }
 
@@ -47,9 +100,15 @@ class InventoryManager {
         this.handles[ledBar.endPoint.id] = ledBar.endPoint;
     }
 
+    registerHandle(handle) {
+        this.handles[handle.id] = handle;
+    }
+
     getId() {
         return this.nextId++;
     }
+
+
 
 
     getLedBarById(id) {
@@ -58,6 +117,12 @@ class InventoryManager {
         }
 
         return null;
+    }
+
+    getHandleById(id) {
+        if(id in this.handles){
+            return this.handles[id];
+        }
     }
 
     // recursive function to return a list of all connected ledbars in order. we return a list of [ledbarid, isstartpoint]. a handle has a sibling on the other side of the ledbar. we can use this to traverse the ledbars
@@ -131,20 +196,15 @@ class GlobalLedManager {
     // This method can be called when a new bar is created or when bars are reconnected
     reassignIds() {
         this.ordenedLeds = [];
-        console.log(inventoryManager.connections);
         for (let i = 0; i < inventoryManager.connections.length; i++) {
             const ledBarId = inventoryManager.connections[i][0];
             const isStartPoint = inventoryManager.connections[i][1];
             const ledBar = inventoryManager.getLedBarById(ledBarId);
             if (ledBar) {
                 let ledBarLeds = [...ledBar.leds];
-                console.log(ledBarLeds);
                 if(!isStartPoint){
-                    console.log('reversing');
                     ledBarLeds.reverse();
-                    
                 }
-                console.log(ledBarLeds);
                 for (let j = 0; j < ledBarLeds.length; j++) {
                     const led = ledBarLeds[j];
                     led.id = j;
@@ -152,7 +212,6 @@ class GlobalLedManager {
                 }
             }
         }
-        console.log(this.ordenedLeds);
     }
 }
 
@@ -171,8 +230,11 @@ function generateRandomColors(num) {
 }
 
 class LedBar {
-    constructor(start, end) {
-        this.id = inventoryManager.getId();
+    constructor(start, end, id) {
+        if (id === undefined){
+            id = inventoryManager.getId();
+        }
+        this.id = id;
         const handleId = Object.keys(inventoryManager.handles).length;
         this.startPoint = new Handle(start, this.id, 0x0000FF, handleId, true); // { x: number, y: number }
         this.endPoint = new Handle(end, this.id, 0xFF0000, handleId+1, false, this.startPoint); // { x: number, y: number }
@@ -237,6 +299,14 @@ class LedBar {
             .on('pointerdown', this.onDragStart.bind(this))
 
         this.dragging = false;
+    }
+
+    save() {
+        return {
+            id: this.id,
+            startPoint: this.startPoint.save(),
+            endPoint: this.endPoint.save()
+        };
     }
 }
 
@@ -340,6 +410,29 @@ class Handle {
         }
     }
 
+    save() {
+        let cable = null;
+        if (this.cable){
+            cable = this.cable.save();
+        }
+        let linkedHandle = null;
+        if (this.linkedHandle){
+            linkedHandle = this.linkedHandle.id;
+            if(linkedHandle === -1){
+                linkedHandle = null;
+            }
+        }
+        return {
+            coord: this.coord,
+            ledBarId: this.ledBarId,
+            id: this.id,
+            isStartPoint: this.isStartPoint,
+            sibling: this.sibling.id,
+            linkedHandle: linkedHandle,
+            cable: cable
+        };
+    }
+
     updatePosition(newCoord) {
         this.coord = newCoord;
         // // Update the graphical representation of the handle, if any.
@@ -358,7 +451,6 @@ class Handle {
 
     createPoint(coord, color){
         const point = new PIXI.Graphics();
-        const handleId = this.id;
         point.beginFill(color); // Nice blue color
         point.drawCircle(0, 0, 5); // Draw a small circle
         point.endFill();
@@ -419,7 +511,19 @@ class Cable {
         this.id = Math.random().toString(36).substr(2, 9); // Generate a random ID
         this.spline = null;
         this.drawSpline(startHandle.coord, endHandle.coord);
+        if (endHandle instanceof Handle){
+            endHandle.cable = this;
+        }
     }
+
+    save() {
+        return {
+            startHandle: this.startHandle.id,
+            endHandle: this.endHandle.id,
+            id: this.id
+        };
+    }
+
 
     drawArrow(start, end, cp1, cp2) {
         // Calculate midpoint for the arrow
@@ -430,7 +534,6 @@ class Cable {
     
         // Arrow properties
         const arrowLength = 10;
-        const arrowWidth = 7;
     
         // Calculate the angle of the line
         const angle = Math.atan2(end.y - start.y, end.x - start.x);
@@ -501,7 +604,6 @@ class Cable {
             this.startHandle.linkedHandle === null && //check if startHandle is not already linked
             handle.linkedHandle === null //check if target handle is not already linked
             ){
-
             this.drawSpline(this.startHandle.coord, handle.coord);
             this.endHandle = handle;
             this.endHandle.linkHandle(this.startHandle);
@@ -633,3 +735,4 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 };
 
 export default PixiCanvas;
+export { saveLayout , loadLayout};

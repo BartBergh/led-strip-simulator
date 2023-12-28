@@ -108,9 +108,6 @@ class InventoryManager {
         return this.nextId++;
     }
 
-
-
-
     getLedBarById(id) {
         if(id in this.ledBars){
             return this.ledBars[id].ledBar;
@@ -152,6 +149,7 @@ class InventoryManager {
         if(powerSource.handle.linkedHandle !== null){
             this.connections = [];
             this.addLinkedLedBars(powerSource.handle.linkedHandle);
+            globalLedManager.reassignIds();
         }
     }
 }
@@ -183,13 +181,6 @@ class GlobalLedManager {
         });
         
         inventoryManager.updateAllLedBars();
-    }
-
-    applyColorsToLedBar(ledBar, colors) {
-        const ledBarLeds = ledBar.leds;
-        ledBarLeds.forEach((led, index) => {
-            led.graphics.tint = colors[index];
-        });
     }
         
 
@@ -240,24 +231,120 @@ class LedBar {
         this.endPoint = new Handle(end, this.id, 0xFF0000, handleId+1, false, this.startPoint); // { x: number, y: number }
         inventoryManager.registerLedBar(this);
         this.ledSize = 20;
-        const ledBarComponents = drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledSize);
-        this.ledBar = ledBarComponents.ledBar;
-        this.mask = ledBarComponents.mask;
-        this.leds = ledBarComponents.leds;
-        this.ledColors = ledBarComponents.ledColors;
+        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledSize);
         this.numLeds = this.leds.length;
+        this.lastClickTime = 0;
         
         app.current.stage.addChild(this.mask);
         app.current.stage.addChild(this.ledBar);
+        
+      // Additional properties like width or ID can be added here.
+    }
 
+    drawRealisticLedBar(startHandle, endHandle, ledbarId, colors = null, ledSize = 20){
+        let start = startHandle.coord;
+        let end = endHandle.coord;
+        let dx = end.x - start.x;
+        let dy = end.y - start.y;
+        let distance = Math.sqrt(dx * dx + dy * dy);
+        let numberOfLeds = Math.ceil(distance / ledSize) - 1;
+        let colorList = colors;
+        if (colorList === null || colorList.length !== numberOfLeds) {
+            colorList = generateRandomColors(numberOfLeds);
+        }
+        const { ledBar, mask, leds, ledColors } = this.createLEDBar(colorList, start, end, ledbarId, numberOfLeds, ledSize);
+        
+        this.ledBar = ledBar;
+        this.mask = mask;
+        this.leds = leds;
+        this.ledColors = ledColors;
+        this.ledBar = ledBar;
         this.ledBar.interactive = true;
         this.ledBar.buttonMode = true;
+        this.ledBar.cursor = 'pointer';
         this.ledBar
             .on('pointerdown', this.onDragStart.bind(this))
+            .on('pointerdown', this.onDoubleClick.bind(this));
+
+        this.numLeds = this.leds.length;
 
         this.dragging = false;
         
-      // Additional properties like width or ID can be added here.
+        return { ledBar, mask, leds, ledColors };    
+    };
+
+    createLEDBar(colorList, startPoint, endPoint, ledbarId, numberOfLeds = 10, ledSize = 20) {
+        let ledBar = new PIXI.Container();
+        let dx = endPoint.x - startPoint.x;
+        let dy = endPoint.y - startPoint.y;
+        let angle = Math.atan2(dy, dx);
+        let leds = [];
+        let ledColors = [];
+    
+        let mask = new PIXI.Graphics();
+        mask.beginFill(0xffffff);
+        mask.drawRect(0, 0, numberOfLeds * ledSize, ledSize); // Width should match the LED bar length
+        mask.endFill();
+    
+        mask.x = startPoint.x;
+        mask.y = startPoint.y;
+        mask.rotation = angle;
+    
+        for (let i = 0; i < numberOfLeds; i++) {
+            let color = colorList[i];
+            let led = new Led(i * ledSize, color, ledbarId, ledSize);
+            leds.push(led);
+            ledColors.push(color);
+            ledBar.addChild(led.displayObject);
+        }
+    
+        let blurFilter = new PIXI.BlurFilter();
+        blurFilter.blur = 10;
+        ledBar.filters = [blurFilter];
+        // ledBar.mask = mask;
+    
+        ledBar.rotation = angle;
+        ledBar.x = startPoint.x;
+        ledBar.y = startPoint.y;
+        return { ledBar, mask, leds, ledColors };
+    }
+
+    onDoubleClick(event) {
+        const currentTime = Date.now();
+        const timeSinceLastClick = currentTime - this.lastClickTime;
+        const doubleClickThreshold = 300; // Milliseconds; adjust as needed
+
+        if (timeSinceLastClick < doubleClickThreshold) {
+            // Perform the rotation
+            this.rotate90Degrees();
+        }
+
+        this.lastClickTime = currentTime;
+    }
+
+    rotate90Degrees() {
+        const midPoint = {
+            x: (this.startPoint.coord.x + this.endPoint.coord.x) / 2,
+            y: (this.startPoint.coord.y + this.endPoint.coord.y) / 2,
+        };
+
+        const rotatePoint = (point) => {
+            const dx = point.x - midPoint.x;
+            const dy = point.y - midPoint.y;
+            return {
+                x: midPoint.x - dy,
+                y: midPoint.y + dx,
+            };
+        };
+
+        // Calculate the new start and end points
+        const newStart = rotatePoint(this.startPoint.coord);
+        const newEnd = rotatePoint(this.endPoint.coord);
+
+        // Update the positions of the handles and the LED bar itself
+        this.startPoint.updatePosition(newStart);
+        this.endPoint.updatePosition(newEnd);
+        this.updatePosition();
     }
 
     onDragStart(event) {
@@ -285,18 +372,9 @@ class LedBar {
                 this.endPoint = movedPoint;
             }
         }
-        const ledBarComponents = drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledColors, this.ledSize);
-        this.ledBar = ledBarComponents.ledBar;
-        this.mask = ledBarComponents.mask;
-        this.leds = ledBarComponents.leds;
-        this.ledColors = ledBarComponents.ledColors;
-        this.numLeds = this.leds.length;
+        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledColors, this.ledSize);
         app.current.stage.addChild(this.mask);
         app.current.stage.addChild(this.ledBar);
-        this.ledBar.interactive = true;
-        this.ledBar.buttonMode = true;
-        this.ledBar
-            .on('pointerdown', this.onDragStart.bind(this))
 
         this.dragging = false;
     }
@@ -340,58 +418,6 @@ class Led {
     // Other methods related to LED can be added here, such as setColor, getId, etc.
 }
 
-// Function to create the LED bar
-function createLEDBar(colorList, startPoint, endPoint, ledbarId, numberOfLeds = 10, ledSize = 20) {
-    let ledBar = new PIXI.Container();
-    let dx = endPoint.x - startPoint.x;
-    let dy = endPoint.y - startPoint.y;
-    let angle = Math.atan2(dy, dx);
-    let leds = [];
-    let ledColors = [];
-
-    let mask = new PIXI.Graphics();
-    mask.beginFill(0xffffff);
-    mask.drawRect(0, 0, numberOfLeds * ledSize, ledSize); // Width should match the LED bar length
-    mask.endFill();
-
-    mask.x = startPoint.x;
-    mask.y = startPoint.y;
-    mask.rotation = angle;
-
-    for (let i = 0; i < numberOfLeds; i++) {
-        let color = colorList[i];
-        let led = new Led(i * ledSize, color, ledbarId, ledSize);
-        leds.push(led);
-        ledColors.push(color);
-        ledBar.addChild(led.displayObject);
-    }
-
-    let blurFilter = new PIXI.BlurFilter();
-    blurFilter.blur = 10;
-    ledBar.filters = [blurFilter];
-    // ledBar.mask = mask;
-
-    ledBar.rotation = angle;
-    ledBar.x = startPoint.x;
-    ledBar.y = startPoint.y;
-    return { ledBar, mask, leds, ledColors };
-}
-
-
-function drawRealisticLedBar(startHandle, endHandle, ledbarId, colors = null, ledSize = 20){
-    let start = startHandle.coord;
-    let end = endHandle.coord;
-    let dx = end.x - start.x;
-    let dy = end.y - start.y;
-    let distance = Math.sqrt(dx * dx + dy * dy);
-    let numberOfLeds = Math.ceil(distance / ledSize) - 1;
-    let colorList = colors;
-    if (colorList === null || colorList.length !== numberOfLeds) {
-        colorList = generateRandomColors(numberOfLeds);
-    }
-    const { ledBar, mask, leds, ledColors } = createLEDBar(colorList, start, end, ledbarId, numberOfLeds, ledSize);
-    return { ledBar, mask, leds, ledColors };    
-};
 
 class Handle {
     constructor(coord, ledBarId, color, handleId, isStartPoint = false, sibling = null) {
@@ -478,6 +504,8 @@ class Handle {
         else {
             this.alpha = 0.5;
             dragTarget = this.point;   
+            this.initialDragPosition = event.data.getLocalPosition(app.current.stage);
+            this.isDragging = true;
         }
         activeDragItem = this;
         app.current.stage.on('pointermove', onDragMove);
@@ -498,6 +526,8 @@ class Handle {
             this.alpha = 1;
             dragTarget = null;
             activeDragItem = null;
+            this.isDragging = false;
+            this.initialDragPosition = null;
         }
         app.current.stage.off('pointermove', onDragMove);
     }
@@ -510,7 +540,12 @@ class Cable {
         this.endHandle = endHandle;
         this.id = Math.random().toString(36).substr(2, 9); // Generate a random ID
         this.spline = null;
-        this.drawSpline(startHandle.coord, endHandle.coord);
+        this.spline = this.drawSpline(startHandle.coord, endHandle.coord);
+        this.spline.interactive = true;
+        this.spline.eventMode ='static';
+        this.spline.buttonMode = true;
+        this.spline.on('pointerup', this.onArrowClick.bind(this));
+        this.spline.cursor = 'pointer';
         if (endHandle instanceof Handle){
             endHandle.cable = this;
         }
@@ -586,6 +621,12 @@ class Cable {
     
         app.current.stage.addChild(this.spline);
         this.drawArrow(start, end, cp1, cp2);
+        this.spline.interactive = true;
+        this.spline.eventMode ='static';
+        this.spline.buttonMode = true;
+        this.spline.on('pointerup', this.onArrowClick.bind(this));
+        this.spline.cursor = 'pointer';
+        return this.spline;
     }
 
     updateSpline() {
@@ -621,6 +662,28 @@ class Cable {
         activeCable = null;
     }
 
+    onArrowClick() {
+        // Remove the cable's graphical representation from the stage
+        console.log('clicked');
+        if (this.spline && this.spline.geometry) {
+            this.spline.destroy();
+        }
+
+    
+        // Update the handles to remove references to this cable
+        if (this.startHandle instanceof Handle) {
+            this.startHandle.linkedHandle = null;
+            this.startHandle.cable = null;
+        }
+        if (this.endHandle instanceof Handle) {
+            this.endHandle.linkedHandle = null;
+            this.endHandle.cable = null;
+        }
+
+        inventoryManager.reassignIds();    
+        
+    }
+
 
 }
 
@@ -644,13 +707,32 @@ function onDragMove(event) {
             activeDragItem.cable.drawSpline(activeDragItem.coord, newPosition);    
         }
         else {
-            const newPosition = app.current.stage.toLocal(event.global, null, dragTarget.position);
-            activeDragItem.coord = dragTarget.position;
-            activeDragItem.updatePosition(newPosition);
-            const linkedLedBarId = activeDragItem.ledBarId;
-            const linkedLedBar = inventoryManager.getLedBarById(linkedLedBarId);
-            if (linkedLedBar) {
-                linkedLedBar.updatePosition(activeDragItem, activeDragItem === linkedLedBar.startPoint);
+            if (activeDragItem instanceof Handle && activeDragItem.isDragging) {
+                const newPosition = app.current.stage.toLocal(event.global, null, dragTarget.position);
+        
+                // Check if the Shift key is down
+                if (event.data.originalEvent.shiftKey) {
+                    const initialPosition = activeDragItem.initialDragPosition;
+                    const dx = Math.abs(newPosition.x - initialPosition.x);
+                    const dy = Math.abs(newPosition.y - initialPosition.y);
+        
+                    // Constrain to the X-axis
+                    if (dx > dy) {
+                        newPosition.y = initialPosition.y;
+                    }
+                    // Constrain to the Y-axis
+                    else {
+                        newPosition.x = initialPosition.x;
+                    }
+                }
+            
+                activeDragItem.coord = dragTarget.position;
+                activeDragItem.updatePosition(newPosition);
+                const linkedLedBarId = activeDragItem.ledBarId;
+                const linkedLedBar = inventoryManager.getLedBarById(linkedLedBarId);
+                if (linkedLedBar) {
+                    linkedLedBar.updatePosition(activeDragItem, activeDragItem === linkedLedBar.startPoint);
+                }
             }
         }
     }
@@ -718,7 +800,6 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
     useEffect(() => {
         if (powerSource.handle.linkedHandle !== null){
             inventoryManager.reassignIds();
-            globalLedManager.reassignIds();
             // for the amount of leds in ledbar with id 0, we create a list of hex codes for red
             let colors = [];
             for (let i = 0; i < inventoryManager.getLedBarById(0).numLeds*2; i++) { 

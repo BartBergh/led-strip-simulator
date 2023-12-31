@@ -1,12 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
 
+
 let app = null;
 let activeDragItem = null;
 let dragTarget = null;
 let isCableEditing = false;
 let activeCable = null
 let powerSource = null;
+// This could be in a constants.js file or similar
+const METERS_TO_PIXELS = 200;  // 1 meter = 200 pixels
+const LEDS_PER_METER = 58;  // 1 meter = 200 pixels
+const LED_HEIGHT_FACTOR = 4; // pixels
+
 
 
 function init() {
@@ -23,6 +29,10 @@ function saveLayout() {
         ledBarConfigs.push(value.ledBar.save());
     }
     return ledBarConfigs;
+}
+
+function applyColors(colors) {
+    globalLedManager.applyColors(colors);
 }
 
 function loadLayout(ledBarConfigs) {
@@ -54,9 +64,11 @@ function loadLayout(ledBarConfigs) {
         const ledbar = inventoryManager.getLedBarById(ledBarData.id);
         if (ledBarData.startPoint.cable !== null && ledBarData.startPoint.cable.startHandle === ledBarData.startPoint.id){
             ledbar.startPoint.cable = new Cable(inventoryManager.getHandleById(ledBarData.startPoint.cable.startHandle), inventoryManager.getHandleById(ledBarData.startPoint.cable.endHandle));
+            inventoryManager.registerCable(ledbar.startPoint.cable);
         }
         if (ledBarData.endPoint.cable !== null && ledBarData.endPoint.cable.startHandle === ledBarData.endPoint.id){
             ledbar.endPoint.cable = new Cable(inventoryManager.getHandleById(ledBarData.endPoint.cable.startHandle), inventoryManager.getHandleById(ledBarData.endPoint.cable.endHandle));
+            inventoryManager.registerCable(ledbar.endPoint.cable);
         }
     });
 }
@@ -90,6 +102,7 @@ class InventoryManager {
         this.ledBars = {};
         this.handles = {};
         this.connections = [];
+        this.cables = [];
         this.nextId = 0;
     }
 
@@ -102,6 +115,14 @@ class InventoryManager {
 
     registerHandle(handle) {
         this.handles[handle.id] = handle;
+    }
+
+    registerCable(cable) {
+        this.cables.push(cable);
+    }
+
+    deleteCable(cable) {
+        this.cables = this.cables.filter(c => c.id !== cable.id);
     }
 
     getId() {
@@ -151,13 +172,18 @@ class InventoryManager {
             this.addLinkedLedBars(powerSource.handle.linkedHandle);
             globalLedManager.reassignIds();
         }
+        if (powerSource.handle.linkedHandle === null){
+            globalLedManager.resetAllLedIds();
+            this.connections = [];
+            globalLedManager.reassignIds();
+        }
     }
 }
 
 class GlobalLedManager {
     constructor() {
         this.leds = [];
-        this.ordenedLeds = [];
+        this.orderedLeds = [];
     }
 
     // Register an LED and assign it a unique ID
@@ -176,17 +202,18 @@ class GlobalLedManager {
     // Apply a given list of colors to ordered LEDs
     applyColors(colors) {
         colors.forEach((color, index) => {
-            if (index < this.ordenedLeds.length)
-                this.ordenedLeds[index].setLedColor(color);
+            if (index < this.orderedLeds.length) {
+                this.orderedLeds[index].setLedColor(color);
+                // this.orderedLeds[index].color = color;
+            }
         });
-        
-        inventoryManager.updateAllLedBars();
+        // inventoryManager.updateAllLedBars();
     }
         
 
     // This method can be called when a new bar is created or when bars are reconnected
     reassignIds() {
-        this.ordenedLeds = [];
+        this.orderedLeds = [];
         for (let i = 0; i < inventoryManager.connections.length; i++) {
             const ledBarId = inventoryManager.connections[i][0];
             const isStartPoint = inventoryManager.connections[i][1];
@@ -199,7 +226,7 @@ class GlobalLedManager {
                 for (let j = 0; j < ledBarLeds.length; j++) {
                     const led = ledBarLeds[j];
                     led.id = j;
-                    this.ordenedLeds.push(led);
+                    this.orderedLeds.push(led);
                 }
             }
         }
@@ -230,8 +257,7 @@ class LedBar {
         this.startPoint = new Handle(start, this.id, 0x0000FF, handleId, true); // { x: number, y: number }
         this.endPoint = new Handle(end, this.id, 0xFF0000, handleId+1, false, this.startPoint); // { x: number, y: number }
         inventoryManager.registerLedBar(this);
-        this.ledSize = 20;
-        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledSize);
+        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id);
         this.numLeds = this.leds.length;
         this.lastClickTime = 0;
         
@@ -241,24 +267,27 @@ class LedBar {
       // Additional properties like width or ID can be added here.
     }
 
-    drawRealisticLedBar(startHandle, endHandle, ledbarId, colors = null, ledSize = 20){
+    drawRealisticLedBar(startHandle, endHandle, ledbarId, colors = null){
+        this.ledBar = null;
+        this.mask = null;
+        this.leds = null;
+        this.ledColors = null;
         let start = startHandle.coord;
         let end = endHandle.coord;
         let dx = end.x - start.x;
         let dy = end.y - start.y;
         let distance = Math.sqrt(dx * dx + dy * dy);
-        let numberOfLeds = Math.ceil(distance / ledSize) - 1;
+        let numberOfLeds = Math.floor(distance / METERS_TO_PIXELS * LEDS_PER_METER);
         let colorList = colors;
         if (colorList === null || colorList.length !== numberOfLeds) {
             colorList = generateRandomColors(numberOfLeds);
         }
-        const { ledBar, mask, leds, ledColors } = this.createLEDBar(colorList, start, end, ledbarId, numberOfLeds, ledSize);
+        const { ledBar, mask, leds, ledColors } = this.createLEDBar(colorList, start, end, ledbarId);
         
         this.ledBar = ledBar;
         this.mask = mask;
         this.leds = leds;
         this.ledColors = ledColors;
-        this.ledBar = ledBar;
         this.ledBar.interactive = true;
         this.ledBar.buttonMode = true;
         this.ledBar.cursor = 'pointer';
@@ -273,7 +302,7 @@ class LedBar {
         return { ledBar, mask, leds, ledColors };    
     };
 
-    createLEDBar(colorList, startPoint, endPoint, ledbarId, numberOfLeds = 10, ledSize = 20) {
+    createLEDBar(colorList, startPoint, endPoint, ledbarId, leds_per_meter=LEDS_PER_METER) {
         let ledBar = new PIXI.Container();
         let dx = endPoint.x - startPoint.x;
         let dy = endPoint.y - startPoint.y;
@@ -282,8 +311,12 @@ class LedBar {
         let ledColors = [];
     
         let mask = new PIXI.Graphics();
+
+        let numberOfLeds = Math.floor(Math.sqrt(dx * dx + dy * dy) / METERS_TO_PIXELS * leds_per_meter);
+        let ledSize = Math.sqrt(dx * dx + dy * dy) / numberOfLeds;
+
         mask.beginFill(0xffffff);
-        mask.drawRect(0, 0, numberOfLeds * ledSize, ledSize); // Width should match the LED bar length
+        mask.drawRect(0, 0, numberOfLeds * ledSize, ledSize * LED_HEIGHT_FACTOR); // Width should match the LED bar length
         mask.endFill();
     
         mask.x = startPoint.x;
@@ -372,7 +405,7 @@ class LedBar {
                 this.endPoint = movedPoint;
             }
         }
-        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledColors, this.ledSize);
+        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledColors);
         app.current.stage.addChild(this.mask);
         app.current.stage.addChild(this.ledBar);
 
@@ -392,11 +425,12 @@ class Led {
     constructor(x, color, ledbarId, ledSize = 20) {
         this.graphics = new PIXI.Graphics();
         this.graphics.beginFill(color);
-        this.graphics.drawRect(0, 0, ledSize, ledSize); // Draw the LED
+        this.graphics.drawRect(0, 0, ledSize, ledSize * LED_HEIGHT_FACTOR); // Draw the LED
         this.graphics.endFill();
         this.graphics.x = x;
         this.ledbarId = ledbarId;
         this.color = color;
+        this.ledSize = ledSize;
         
         // Assign a unique ID from the global manager
         globalLedManager.registerLed(this);
@@ -410,8 +444,9 @@ class Led {
         // remove the old color, draw the new color
         this.color = color;
         this.graphics.clear();
+        this.graphics.color = color;
         this.graphics.beginFill(color);
-        this.graphics.drawRect(0, 0, this.ledSize, this.ledSize); // Draw the LED
+        this.graphics.drawRect(0, 0, this.ledSize, this.ledSize * LED_HEIGHT_FACTOR); // Draw the LED
         this.graphics.endFill();
     }
 
@@ -504,7 +539,7 @@ class Handle {
         else {
             this.alpha = 0.5;
             dragTarget = this.point;   
-            this.initialDragPosition = event.data.getLocalPosition(app.current.stage);
+            this.initialDragPosition = this.coord;
             this.isDragging = true;
         }
         activeDragItem = this;
@@ -538,6 +573,7 @@ class Cable {
     constructor(startHandle, endHandle) {
         this.startHandle = startHandle;
         this.endHandle = endHandle;
+        this.currentAlpha = 1;
         this.id = Math.random().toString(36).substr(2, 9); // Generate a random ID
         this.spline = null;
         this.spline = this.drawSpline(startHandle.coord, endHandle.coord);
@@ -546,6 +582,7 @@ class Cable {
         this.spline.buttonMode = true;
         this.spline.on('pointerup', this.onArrowClick.bind(this));
         this.spline.cursor = 'pointer';
+        
         if (endHandle instanceof Handle){
             endHandle.cable = this;
         }
@@ -626,6 +663,7 @@ class Cable {
         this.spline.buttonMode = true;
         this.spline.on('pointerup', this.onArrowClick.bind(this));
         this.spline.cursor = 'pointer';
+        this.spline.alpha = this.currentAlpha;
         return this.spline;
     }
 
@@ -651,6 +689,7 @@ class Cable {
             this.startHandle.linkHandle(this.endHandle);
             this.startHandle.cable = this;
             this.endHandle.cable = this;
+            inventoryManager.registerCable(this);
             app.current.stage.addChild(this.spline);
         }
         else {
@@ -664,11 +703,9 @@ class Cable {
 
     onArrowClick() {
         // Remove the cable's graphical representation from the stage
-        console.log('clicked');
         if (this.spline && this.spline.geometry) {
             this.spline.destroy();
         }
-
     
         // Update the handles to remove references to this cable
         if (this.startHandle instanceof Handle) {
@@ -680,6 +717,7 @@ class Cable {
             this.endHandle.cable = null;
         }
 
+        inventoryManager.deleteCable(this);
         inventoryManager.reassignIds();    
         
     }
@@ -765,6 +803,7 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
                 width: window.innerWidth,
                 height: window.innerHeight,
                 backgroundColor: 0x333333,
+                antialias: true, 
                 resolution: window.devicePixelRatio || 1,
             });
             pixiContainer.current.appendChild(app.current.view);
@@ -795,17 +834,39 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 
     useEffect(() => {
         isCableEditing = isCableEditingMode;
+        if(isCableEditingMode){
+            inventoryManager.cables.forEach(cable => {
+                cable.spline.alpha = 1;
+                cable.currentAlpha = 1;
+            });
+        } else {
+            inventoryManager.cables.forEach(cable => {
+                cable.spline.alpha = 0.05;
+                cable.currentAlpha = 0.05;
+            });
+        }
+        
+
     }, [isCableEditingMode]);
 
     useEffect(() => {
         if (powerSource.handle.linkedHandle !== null){
             inventoryManager.reassignIds();
-            // for the amount of leds in ledbar with id 0, we create a list of hex codes for red
-            let colors = [];
-            for (let i = 0; i < inventoryManager.getLedBarById(0).numLeds*2; i++) { 
-                colors.push(0xFF0000);
+        }
+        if (isLightsOn){
+            app.current.renderer.backgroundColor = 0x050505;
+            // go over each value of the handles. this is an object in inventoryManager.handles
+
+            for (const [key, value] of Object.entries(inventoryManager.handles)) {
+                value.point.alpha = 0.1;
             }
-            globalLedManager.applyColors(colors);
+
+        } else {
+            app.current.renderer.backgroundColor = 0x333333;
+            for (const [key, value] of Object.entries(inventoryManager.handles)) {
+                value.point.alpha = 1;
+            }
+            
         }
         
     }, [isLightsOn]);
@@ -816,4 +877,4 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 };
 
 export default PixiCanvas;
-export { saveLayout , loadLayout};
+export { saveLayout , loadLayout, applyColors, METERS_TO_PIXELS};

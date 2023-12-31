@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { AppBar as MuiAppBar, Toolbar, IconButton, Typography, Switch, FormGroup, FormControlLabel } from '@mui/material';
+import React, { useEffect, useRef, useState } from 'react';
+import { AppBar as MuiAppBar, Toolbar, IconButton, Typography, Switch, FormGroup, FormControlLabel, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
 import { Menu, MenuItem } from '@mui/material';
@@ -13,9 +13,13 @@ interface AppBarProps {
     isLightsOn: boolean;
     setIsLightsOn: React.Dispatch<React.SetStateAction<boolean>>;
     onAddLedBar: () => void; 
+    ledBarLength: string;
+    setLedBarLength: React.Dispatch<React.SetStateAction<string>>;
+    ledsPerMeter: string;
+    setLedsPerMeter: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, setIsCableEditingMode, onAddLedBar }) => {
+const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, setIsCableEditingMode, onAddLedBar, ledBarLength, setLedBarLength, ledsPerMeter, setLedsPerMeter }) => {
   const handleCableEditingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsCableEditingMode(event.target.checked);
   };
@@ -147,6 +151,20 @@ const handleLoadFiles = (event: React.ChangeEvent<HTMLInputElement>) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           LED Strip Simulator
         </Typography>
+        <TextField
+          label="LED Bar Length (m)"
+          variant="outlined"
+          value={ledBarLength}
+          onChange={(e) => setLedBarLength(e.target.value)}
+          style={{ margin: '0 10px' }}
+        />
+        <TextField
+          label="LEDs per Meter"
+          variant="outlined"
+          value={ledsPerMeter}
+          onChange={(e) => setLedsPerMeter(e.target.value)}
+          style={{ margin: '0 10px' }}
+        />
         <IconButton color="inherit" onClick={onAddLedBar}>
           <AddIcon />
         </IconButton>

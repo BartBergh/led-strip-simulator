@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import AppBar from './components/AppBar/AppBar';
 import { CssBaseline } from '@mui/material';
 import PixiCanvas from './components/PixiCanvas/PixiCanvas';
-import { METERS_TO_PIXELS, applyColors } from './components/PixiCanvas/PixiCanvas';
+import { meterToPixels, applyColors } from './components/PixiCanvas/PixiCanvas';
 import WebSocketService from './services/websocketService';
 
 const App: React.FC = () => {
@@ -11,14 +11,15 @@ const App: React.FC = () => {
   const [ledBarConfigs, setLedBarConfigs] = useState<LedBarData[]>([]);
   const [ledBarLength, setLedBarLength] = useState('');  // Length in meters
   const [ledsPerMeter, setLedsPerMeter] = useState('');  // LEDs per meter
-  const [webSocketService, setWebSocketService] = useState<WebSocketService | null>(null);
-
+  const [scale, setScale] = useState('');  // Scale in pixels per meter
+  const [, setWebSocketService] = useState<WebSocketService | null>(null);
   const WEBSOCKET_URL = 'ws://192.168.0.123/ws';
 
   // Function to add a new LedBar
   const addLedBar = () => {
     const length = ledBarLength === '' ? 1 : parseFloat(ledBarLength);
-    const lengthInPixels = length * METERS_TO_PIXELS;
+    const ledsPMeter = ledsPerMeter === '' ? 60 : parseFloat(ledsPerMeter);
+    const lengthInPixels = length * meterToPixels;
 
     // Determine the new end position based on the length
     const newEndX = 100 + lengthInPixels;  // Assuming a horizontal LED bar for simplicity
@@ -26,10 +27,15 @@ const App: React.FC = () => {
     const newLedBar: LedBarData = {
       start: { x: 100, y: 100 },
       end: { x: newEndX, y: 100 },
+      ledsPerMeter: ledsPMeter,
       id: ledBarConfigs.length
     };
     setLedBarConfigs([...ledBarConfigs, newLedBar]);
   };
+
+  document.addEventListener('contextmenu', event => {
+    event.preventDefault();
+  });
 
   useEffect(() => {
     const webSocketService = new WebSocketService(WEBSOCKET_URL, updateLedDisplay);
@@ -64,6 +70,7 @@ const App: React.FC = () => {
       x: number;
       y: number;
     };
+    ledsPerMeter: number;
     id: number;
   }
 
@@ -80,6 +87,8 @@ const App: React.FC = () => {
         setLedBarLength={setLedBarLength}
         ledsPerMeter={ledsPerMeter}
         setLedsPerMeter={setLedsPerMeter}
+        scale={scale}
+        setScale={setScale}
         onAddLedBar={addLedBar}
       />
       <div>

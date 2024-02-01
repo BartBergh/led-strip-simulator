@@ -9,9 +9,11 @@ let isCableEditing = false;
 let activeCable = null
 let powerSource = null;
 // This could be in a constants.js file or similar
-const METERS_TO_PIXELS = 200;  // 1 meter = 200 pixels
+
 const LEDS_PER_METER = 58;  // 1 meter = 200 pixels
-const LED_HEIGHT_FACTOR = 4; // pixels
+let scale = 0.6;
+let ledBarHeight = 15 * scale; // pixels
+let meterToPixels = 200 * scale;  // 1 meter = 200 pixels
 
 
 
@@ -20,12 +22,11 @@ function init() {
     app.current.stage.hitArea = app.current.screen;
     app.current.stage.on('pointerup', onDragEnd);
     app.current.stage.on('pointerupoutside', onDragEnd);
-    
 }
 
 function saveLayout() {
     let ledBarConfigs = [];
-    for (const [key, value] of Object.entries(inventoryManager.ledBars)) {
+    for (const [, value] of Object.entries(inventoryManager.ledBars)) {
         ledBarConfigs.push(value.ledBar.save());
     }
     return ledBarConfigs;
@@ -37,7 +38,8 @@ function applyColors(colors) {
 
 function loadLayout(ledBarConfigs) {
     ledBarConfigs.forEach(ledBarData => {
-        let ledbar = new LedBar(ledBarData.startPoint.coord, ledBarData.endPoint.coord, ledBarData.id);
+        console.log(ledBarData);
+        let ledbar = new LedBar(ledBarData.startPoint.coord, ledBarData.endPoint.coord, ledBarData.ledsPerMeter, ledBarData.id);
         inventoryManager.registerLedBar(ledbar);
     });
     // for each ledbar, we have to set some values
@@ -49,6 +51,7 @@ function loadLayout(ledBarConfigs) {
         ledbar.endPoint.isStartPoint = ledBarData.endPoint.isStartPoint; 
         ledbar.startPoint.sibling = inventoryManager.getHandleById(ledBarData.startPoint.sibling);
         ledbar.endPoint.sibling = inventoryManager.getHandleById(ledBarData.endPoint.sibling);
+        ledbar.ledsPerMeter = ledBarData.ledsPerMeter;
     });
     ledBarConfigs.forEach(ledBarData => {
         const ledbar = inventoryManager.getLedBarById(ledBarData.id);
@@ -103,12 +106,13 @@ class InventoryManager {
         this.handles = {};
         this.connections = [];
         this.cables = [];
+        this.popups = [];
         this.nextId = 0;
     }
 
     // Register an LED and assign it a unique ID
     registerLedBar(ledBar) {
-        this.ledBars[ledBar.id] = {'ledBar': ledBar, 'start': ledBar.startPoint, 'end': ledBar.endPoint};
+        this.ledBars[ledBar.id] = {'ledBar': ledBar, 'start': ledBar.startPoint, 'end': ledBar.endPoint, 'ledsPerMeter': ledBar.ledsPerMeter};
         this.handles[ledBar.startPoint.id] = ledBar.startPoint;
         this.handles[ledBar.endPoint.id] = ledBar.endPoint;
     }
@@ -117,12 +121,30 @@ class InventoryManager {
         this.handles[handle.id] = handle;
     }
 
+    registerPopup(popup) {
+        const id = this.popups.length;
+        this.popups.push(popup);
+        return id;
+    }
+
     registerCable(cable) {
         this.cables.push(cable);
     }
 
     deleteCable(cable) {
         this.cables = this.cables.filter(c => c.id !== cable.id);
+    }
+
+    deleteLedBar(ledBarId) {
+        console.log(this.ledBars);
+        this.ledBars[ledBarId].ledBar.ledBar.destroy();
+        this.ledBars[ledBarId].ledBar.diffuser.destroy();
+        this.ledBars[ledBarId].ledBar.startPoint.point.destroy();
+        this.ledBars[ledBarId].ledBar.endPoint.point.destroy();
+
+        delete this.handles[this.ledBars[ledBarId].start.id];
+        delete this.handles[this.ledBars[ledBarId].end.id];
+        delete this.ledBars[ledBarId];
     }
 
     getId() {
@@ -155,7 +177,7 @@ class InventoryManager {
 
     updateAllLedBars() {
         // for Each ledBar, we get the colors of the leds and set them to ledbar.ledColors
-        for (const [key, value] of Object.entries(this.ledBars)) {
+        for (const [, value] of Object.entries(this.ledBars)) {
             let colors = [];
             for (let i = 0; i < value.ledBar.numLeds; i++) {
                 colors.push(value.ledBar.leds[i].color);
@@ -176,6 +198,20 @@ class InventoryManager {
             globalLedManager.resetAllLedIds();
             this.connections = [];
             globalLedManager.reassignIds();
+        }
+    }
+
+    removePopups(id=-1) {
+        if(id === -1){
+            this.popups.forEach(popup => {
+                // check if popup is still in the dom
+                if (popup.parentNode){
+                    document.body.removeChild(popup);
+                }
+            });
+            this.popups = [];
+        } else {
+            this.popups.splice(id, 1);
         }
     }
 }
@@ -248,7 +284,7 @@ function generateRandomColors(num) {
 }
 
 class LedBar {
-    constructor(start, end, id) {
+    constructor(start, end, ledsPerMeter, id) {
         if (id === undefined){
             id = inventoryManager.getId();
         }
@@ -256,36 +292,39 @@ class LedBar {
         const handleId = Object.keys(inventoryManager.handles).length;
         this.startPoint = new Handle(start, this.id, 0x0000FF, handleId, true); // { x: number, y: number }
         this.endPoint = new Handle(end, this.id, 0xFF0000, handleId+1, false, this.startPoint); // { x: number, y: number }
+        this.ledsPerMeter = ledsPerMeter;
+        this.rotation = 0;
         inventoryManager.registerLedBar(this);
-        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id);
+        this.drawRealisticLedBar(this.startPoint, this.endPoint, this.ledsPerMeter, this.id);
         this.numLeds = this.leds.length;
         this.lastClickTime = 0;
         
-        app.current.stage.addChild(this.mask);
+        app.current.stage.addChild(this.diffuser);
         app.current.stage.addChild(this.ledBar);
         
       // Additional properties like width or ID can be added here.
     }
 
-    drawRealisticLedBar(startHandle, endHandle, ledbarId, colors = null){
+    drawRealisticLedBar(startHandle, endHandle, ledsPerMeter, ledbarId, colors = null){
         this.ledBar = null;
-        this.mask = null;
+        this.diffuser = null;
         this.leds = null;
         this.ledColors = null;
         let start = startHandle.coord;
         let end = endHandle.coord;
         let dx = end.x - start.x;
         let dy = end.y - start.y;
-        let distance = Math.sqrt(dx * dx + dy * dy);
-        let numberOfLeds = Math.floor(distance / METERS_TO_PIXELS * LEDS_PER_METER);
+        this.distance = Math.sqrt(dx * dx + dy * dy);
+        this.lengthInMeters = this.distance / meterToPixels;
+        let numberOfLeds = Math.floor(this.lengthInMeters * ledsPerMeter);
         let colorList = colors;
         if (colorList === null || colorList.length !== numberOfLeds) {
             colorList = generateRandomColors(numberOfLeds);
         }
-        const { ledBar, mask, leds, ledColors } = this.createLEDBar(colorList, start, end, ledbarId);
+        const { ledBar, diffuser, leds, ledColors } = this.createLEDBar(colorList, start, end, ledbarId, ledsPerMeter);
         
         this.ledBar = ledBar;
-        this.mask = mask;
+        this.diffuser = diffuser;
         this.leds = leds;
         this.ledColors = ledColors;
         this.ledBar.interactive = true;
@@ -293,54 +332,74 @@ class LedBar {
         this.ledBar.cursor = 'pointer';
         this.ledBar
             .on('pointerdown', this.onDragStart.bind(this))
+            .on('rightclick', this.onRightClick.bind(this))
             .on('pointerdown', this.onDoubleClick.bind(this));
 
         this.numLeds = this.leds.length;
 
         this.dragging = false;
         
-        return { ledBar, mask, leds, ledColors };    
+        return { ledBar, diffuser, leds, ledColors };    
     };
 
-    createLEDBar(colorList, startPoint, endPoint, ledbarId, leds_per_meter=LEDS_PER_METER) {
+    createLEDBar(colorList, startPoint, endPoint, ledbarId, leds_per_meter = LEDS_PER_METER) {
         let ledBar = new PIXI.Container();
         let dx = endPoint.x - startPoint.x;
         let dy = endPoint.y - startPoint.y;
         let angle = Math.atan2(dy, dx);
+        // rotation is angle in degrees
+        this.rotation = angle * 180 / Math.PI;
+        let lengthInMeters = Math.sqrt(dx * dx + dy * dy) / meterToPixels;
+        let numberOfLeds = Math.floor(lengthInMeters * leds_per_meter);
+        let ledSize = lengthInMeters * meterToPixels / numberOfLeds;
+    
+        let diffuser = new PIXI.Graphics();
+        diffuser.beginFill(0xffffff);
+        diffuser.drawRect(0, 0, numberOfLeds * ledSize, ledBarHeight);
+        diffuser.endFill();
+    
+        
+    
         let leds = [];
         let ledColors = [];
     
-        let mask = new PIXI.Graphics();
-
-        let numberOfLeds = Math.floor(Math.sqrt(dx * dx + dy * dy) / METERS_TO_PIXELS * leds_per_meter);
-        let ledSize = Math.sqrt(dx * dx + dy * dy) / numberOfLeds;
-
-        mask.beginFill(0xffffff);
-        mask.drawRect(0, 0, numberOfLeds * ledSize, ledSize * LED_HEIGHT_FACTOR); // Width should match the LED bar length
-        mask.endFill();
-    
-        mask.x = startPoint.x;
-        mask.y = startPoint.y;
-        mask.rotation = angle;
-    
         for (let i = 0; i < numberOfLeds; i++) {
-            let color = colorList[i];
+            let color = colorList[i % colorList.length]; // Ensure color list wraps around if not enough colors
             let led = new Led(i * ledSize, color, ledbarId, ledSize);
             leds.push(led);
             ledColors.push(color);
             ledBar.addChild(led.displayObject);
         }
     
-        let blurFilter = new PIXI.BlurFilter();
-        blurFilter.blur = 10;
-        ledBar.filters = [blurFilter];
-        // ledBar.mask = mask;
-    
         ledBar.rotation = angle;
         ledBar.x = startPoint.x;
         ledBar.y = startPoint.y;
-        return { ledBar, mask, leds, ledColors };
+    
+        // Create text to display above the LED bar
+        let textContent = `Length: ${(lengthInMeters* 100).toFixed(0)}cm, LEDs: ${numberOfLeds}`;
+        let textStyle = new PIXI.TextStyle({
+            fontFamily: 'Arial',
+            fontSize: 14,
+            fill: 'white',
+            align: 'center'
+        });
+        let text = new PIXI.Text(textContent, textStyle);
+    
+        text.x = this.distance / 2 - text.width / 2;
+        text.y = -20;
+
+        let blurFilter = new PIXI.BlurFilter();
+        blurFilter.blur = 10;
+        ledBar.filters = [blurFilter];
+        
+        diffuser.x = startPoint.x;
+        diffuser.y = startPoint.y;
+        diffuser.rotation = angle;
+        diffuser.addChild(text);
+    
+        return { ledBar, diffuser, leds, ledColors, text };
     }
+    
 
     onDoubleClick(event) {
         const currentTime = Date.now();
@@ -349,13 +408,21 @@ class LedBar {
 
         if (timeSinceLastClick < doubleClickThreshold) {
             // Perform the rotation
-            this.rotate90Degrees();
+            this.rotate(90);
         }
 
         this.lastClickTime = currentTime;
     }
 
-    rotate90Degrees() {
+    rotate(degrees) {
+        degrees = Number(degrees);
+        const radians = degrees * (Math.PI / 180);
+
+        // Update the rotation state
+        this.rotation += degrees;
+        // Normalize the rotation to the range [0, 360)
+        // this.rotation = (this.rotation + 360) % 360;
+
         const midPoint = {
             x: (this.startPoint.coord.x + this.endPoint.coord.x) / 2,
             y: (this.startPoint.coord.y + this.endPoint.coord.y) / 2,
@@ -365,12 +432,11 @@ class LedBar {
             const dx = point.x - midPoint.x;
             const dy = point.y - midPoint.y;
             return {
-                x: midPoint.x - dy,
-                y: midPoint.y + dx,
+                x: midPoint.x + dx * Math.cos(radians) - dy * Math.sin(radians),
+                y: midPoint.y + dx * Math.sin(radians) + dy * Math.cos(radians),
             };
         };
 
-        // Calculate the new start and end points
         const newStart = rotatePoint(this.startPoint.coord);
         const newEnd = rotatePoint(this.endPoint.coord);
 
@@ -381,22 +447,104 @@ class LedBar {
     }
 
     onDragStart(event) {
-        this.alpha = 0.5;
-        dragTarget = this.ledBar;
-        activeDragItem = this;
-        app.current.stage.on('pointermove', onDragMove);
-        const initialMousePosition = event.data.getLocalPosition(dragTarget.parent);
-        // Store the initial position of the ledBar relative to the mouse
-        this.startPosition = {
-            x: dragTarget.x - initialMousePosition.x + this.startPoint.coord.x + ((initialMousePosition.x - this.startPoint.coord.x)*2),
-            y: dragTarget.y - initialMousePosition.y + this.startPoint.coord.y + ((initialMousePosition.y - this.startPoint.coord.y)*2),
-        };
+        // if leftclick 
+        if (event.data.originalEvent.button === 0){
+            this.alpha = 0.5;
+            dragTarget = this.ledBar;
+            activeDragItem = this;
+            app.current.stage.on('pointermove', onDragMove);
+            const initialMousePosition = event.data.getLocalPosition(dragTarget.parent);
+            // Store the initial position of the ledBar relative to the mouse
+            this.startPosition = {
+                x: dragTarget.x - initialMousePosition.x + this.startPoint.coord.x + ((initialMousePosition.x - this.startPoint.coord.x)*2),
+                y: dragTarget.y - initialMousePosition.y + this.startPoint.coord.y + ((initialMousePosition.y - this.startPoint.coord.y)*2),
+            };
+        }
     }
+
+    onRightClick(event) {
+        this.showEditPopup(event);
+    }
+
+    showEditPopup(event) {
+        const popup = document.createElement('div');
+        popup.style.position = 'absolute';
+        
+    
+        // Calculate position
+        const x = event.data.global.x;
+        const y = event.data.global.y;
+        popup.style.left = `${x}px`;
+        popup.style.top = `${y}px`;
+    
+        // Add form elements
+        popup.innerHTML = `
+            <style>
+                .popup-content {
+                    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+                    border-radius: 10px; /* Rounded corners */
+                    padding: 20px; /* Padding inside the popup */
+                    max-width: 150px; /* Limiting the maximum width */
+                    font-size: 14px; /* Smaller font size */
+                }
+                .popup-content label,
+                .popup-content input,
+                .popup-content button {
+                    display: block; /* Make each element take its own line */
+                    width: 100%; /* Full width */
+                    margin-bottom: 10px; /* Space between elements */
+                }
+                .popup-content input,
+                .popup-content button {
+                    padding: 5px; /* Padding inside inputs and button */
+                }
+                .popup-content button {
+                    cursor: pointer; /* Change cursor on hover over the button */
+                }
+            </style>
+            <div class="popup-content">
+                <label>LPM: <input type="number" id="lpmInput" value="${this.ledsPerMeter}"></label>
+                <label>Rotation: <input type="number" id="rotationInput" value="${this.rotation}"></label>
+                <button id="submitBtn">Update</button>
+                <button id="deleteBtn">Delete</button>
+            </div>
+        `;
+    
+        document.body.appendChild(popup);
+
+        const popupId = inventoryManager.registerPopup(popup);
+    
+        document.getElementById('submitBtn').addEventListener('click', () => {
+            const newLPM = document.getElementById('lpmInput').value;
+            const newRotation = document.getElementById('rotationInput').value;
+            this.updateLedBar(newLPM, newRotation, popupId);
+            this.rotate(-this.rotation);
+            this.rotate(newRotation);
+            document.body.removeChild(popup);
+        });
+
+        document.getElementById('deleteBtn').addEventListener('click', () => {   
+            inventoryManager.deleteLedBar(this.id);
+            document.body.removeChild(popup);
+        });
+    }
+
+    updateLedBar(newLPM, newRotation, popupId){
+        this.ledBar.destroy();
+        this.diffuser.destroy();
+        this.ledsPerMeter = newLPM;
+        this.drawRealisticLedBar(this.startPoint, this.endPoint, this.ledsPerMeter, this.id);
+        app.current.stage.addChild(this.diffuser);
+        app.current.stage.addChild(this.ledBar);
+        inventoryManager.removePopups(popupId);
+    }
+
+
   
     // Method to update the position based on a moved endpoint.
     updatePosition(movedPoint = null, isStartPoint = true) {
         this.ledBar.destroy();
-        this.mask.destroy();
+        this.diffuser.destroy();
 
         if (movedPoint !== null) {
             if (isStartPoint) {
@@ -405,8 +553,8 @@ class LedBar {
                 this.endPoint = movedPoint;
             }
         }
-        const ledBarComponents = this.drawRealisticLedBar(this.startPoint, this.endPoint, this.id, this.ledColors);
-        app.current.stage.addChild(this.mask);
+        this.drawRealisticLedBar(this.startPoint, this.endPoint, this.ledsPerMeter, this.id);
+        app.current.stage.addChild(this.diffuser);
         app.current.stage.addChild(this.ledBar);
 
         this.dragging = false;
@@ -416,7 +564,8 @@ class LedBar {
         return {
             id: this.id,
             startPoint: this.startPoint.save(),
-            endPoint: this.endPoint.save()
+            endPoint: this.endPoint.save(),
+            ledsPerMeter: this.ledsPerMeter
         };
     }
 }
@@ -425,7 +574,7 @@ class Led {
     constructor(x, color, ledbarId, ledSize = 20) {
         this.graphics = new PIXI.Graphics();
         this.graphics.beginFill(color);
-        this.graphics.drawRect(0, 0, ledSize, ledSize * LED_HEIGHT_FACTOR); // Draw the LED
+        this.graphics.drawRect(0, 0, ledSize, ledBarHeight); // Draw the LED
         this.graphics.endFill();
         this.graphics.x = x;
         this.ledbarId = ledbarId;
@@ -446,7 +595,7 @@ class Led {
         this.graphics.clear();
         this.graphics.color = color;
         this.graphics.beginFill(color);
-        this.graphics.drawRect(0, 0, this.ledSize, this.ledSize * LED_HEIGHT_FACTOR); // Draw the LED
+        this.graphics.drawRect(0, 0, this.ledSize, ledBarHeight); // Draw the LED
         this.graphics.endFill();
     }
 
@@ -495,7 +644,8 @@ class Handle {
     }
 
     updatePosition(newCoord) {
-        this.coord = newCoord;
+        this.coord.x = newCoord.x;
+        this.coord.y = newCoord.y;
         // // Update the graphical representation of the handle, if any.
         
         this.point.x = newCoord.x;
@@ -727,6 +877,9 @@ class Cable {
 
 function onDragEnd()
 {
+    if (activeDragItem === null){
+        inventoryManager.removePopups();
+    }
     if (dragTarget)
     {
         app.current.stage.off('pointermove', onDragMove);
@@ -734,7 +887,9 @@ function onDragEnd()
         dragTarget = null;
         activeDragItem = null;
     }
+    
 }
+
 
 function onDragMove(event) {
     // check if dragtarget is a handle or a ledbar
@@ -764,7 +919,7 @@ function onDragMove(event) {
                     }
                 }
             
-                activeDragItem.coord = dragTarget.position;
+                // activeDragItem.coord = dragTarget.position;
                 activeDragItem.updatePosition(newPosition);
                 const linkedLedBarId = activeDragItem.ledBarId;
                 const linkedLedBar = inventoryManager.getLedBarById(linkedLedBarId);
@@ -825,11 +980,9 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 
     useEffect(() => {
         // Effect to handle drawing new LedBars when ledBars state changes
-        ledBarConfigs.forEach(ledBarData => {
-            if(ledBarData.id >= Object.keys(inventoryManager.ledBars).length){
-                new LedBar(ledBarData.start, ledBarData.end, ledBarData.id);
-            }   
-        });
+        let ledBar = ledBarConfigs.pop();
+        if (ledBar){new LedBar(ledBar.start, ledBar.end, ledBar.ledsPerMeter);};
+
     }, [ledBarConfigs]);
 
     useEffect(() => {
@@ -857,14 +1010,20 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
             app.current.renderer.backgroundColor = 0x050505;
             // go over each value of the handles. this is an object in inventoryManager.handles
 
-            for (const [key, value] of Object.entries(inventoryManager.handles)) {
+            for (const [, value] of Object.entries(inventoryManager.handles)) {
                 value.point.alpha = 0.1;
+            }
+            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                value.ledBar.diffuser.children[0].alpha = 0;
             }
 
         } else {
             app.current.renderer.backgroundColor = 0x333333;
-            for (const [key, value] of Object.entries(inventoryManager.handles)) {
+            for (const [, value] of Object.entries(inventoryManager.handles)) {
                 value.point.alpha = 1;
+            }
+            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                value.ledBar.diffuser.children[0].alpha = 1;
             }
             
         }
@@ -877,4 +1036,4 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 };
 
 export default PixiCanvas;
-export { saveLayout , loadLayout, applyColors, METERS_TO_PIXELS};
+export { saveLayout , loadLayout, applyColors, meterToPixels};

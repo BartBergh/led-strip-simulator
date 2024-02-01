@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, {useRef} from 'react';
 import { AppBar as MuiAppBar, Toolbar, IconButton, Typography, Switch, FormGroup, FormControlLabel, TextField } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import AddIcon from '@mui/icons-material/Add';
@@ -17,9 +17,11 @@ interface AppBarProps {
     setLedBarLength: React.Dispatch<React.SetStateAction<string>>;
     ledsPerMeter: string;
     setLedsPerMeter: React.Dispatch<React.SetStateAction<string>>;
+    scale: string;
+    setScale: React.Dispatch<React.SetStateAction<string>>; 
 }
 
-const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, setIsCableEditingMode, onAddLedBar, ledBarLength, setLedBarLength, ledsPerMeter, setLedsPerMeter }) => {
+const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, setIsCableEditingMode, onAddLedBar, ledBarLength, setLedBarLength, ledsPerMeter, setLedsPerMeter, scale, setScale }) => {
   const handleCableEditingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsCableEditingMode(event.target.checked);
   };
@@ -60,15 +62,6 @@ const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditi
     a.click();
     document.body.removeChild(a);
   
-    handleMenuClose();
-  };
-  
-  
-  
-  
-  const handleLoad = () => {
-    // Implement load logic
-    console.log('Load action');
     handleMenuClose();
   };
 
@@ -151,6 +144,13 @@ const handleLoadFiles = (event: React.ChangeEvent<HTMLInputElement>) => {
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           LED Strip Simulator
         </Typography>
+        <TextField
+            label="Scale"
+            variant="outlined"
+            value={scale}
+            onChange={(e) => setScale(e.target.value)}
+            style={{ margin: '0 10px' }}
+        />
         <TextField
           label="LED Bar Length (m)"
           variant="outlined"

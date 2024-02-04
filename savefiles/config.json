@@ -1,6 +1,6 @@
 {
     "audio": {
-        "audio_device": 7,
+        "audio_device": 27,
         "min_volume": 0.1
     },
     "configuration_version": "2.3.0",
@@ -115,6 +115,50 @@
                         "solid_color": false
                     },
                     "type": "bar"
+                }
+            }
+        },
+        "high-back-low-front": {
+            "name": "High back low front",
+            "scene_image": "Wallpaper",
+            "scene_midiactivate": null,
+            "scene_payload": null,
+            "scene_puturl": null,
+            "scene_tags": null,
+            "virtuals": {
+                "backend": {
+                    "config": {
+                        "background_brightness": 1,
+                        "background_color": "#000000",
+                        "blur": 2,
+                        "brightness": 1,
+                        "decay": 0.7,
+                        "flip": false,
+                        "frequency_range": "Mids",
+                        "gradient": "linear-gradient(90deg, #00ffff 0.00%,#0000ff 100.00%)",
+                        "gradient_roll": 0,
+                        "invert_roll": false,
+                        "mirror": false,
+                        "multiplier": 1
+                    },
+                    "type": "blade_power_plus"
+                },
+                "split": {
+                    "config": {
+                        "background_brightness": 1,
+                        "background_color": "#000000",
+                        "blur": 4,
+                        "brightness": 1,
+                        "decay": 0.25,
+                        "flip": false,
+                        "frequency_range": "Lows (beat+bass)",
+                        "gradient": "linear-gradient(90deg, #00c78c 0.00%,#00ff32 100.00%)",
+                        "gradient_roll": 0,
+                        "invert_roll": false,
+                        "mirror": true,
+                        "multiplier": 0.63
+                    },
+                    "type": "blade_power_plus"
                 }
             }
         }

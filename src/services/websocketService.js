@@ -53,7 +53,6 @@ class WebSocketService {
             hexValues.push(hexValue);
             hexValues.push(hexValue);
         }
-        console.log('hexValues:', hexValues.length);
         return hexValues;
     }
   

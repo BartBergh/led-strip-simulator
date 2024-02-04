@@ -65,41 +65,39 @@ const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditi
     handleMenuClose();
   };
 
-const handleLoadFiles = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const files = event.target.files;
-  if (files) {
-    for (let i = 0; i < files.length; i++) {
-      const file = files[i];
-      const reader = new FileReader();
-      
-      reader.onload = (e) => {
-        try {
-          const text = e.target?.result;
-          if (typeof text === 'string') {
-            const ledBarConfigs = JSON.parse(text);
-            if (Array.isArray(ledBarConfigs)) {
-              loadLayout(ledBarConfigs); // Pass the array to your load function
-            } else {
-              throw new Error('The loaded file does not contain an array.');
+  const handleLoadFiles = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (files) {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const reader = new FileReader();
+        
+        reader.onload = (e) => {
+          try {
+            const text = e.target?.result;
+            if (typeof text === 'string') {
+              const ledBarConfigs = JSON.parse(text);
+              if (Array.isArray(ledBarConfigs)) {
+                loadLayout(ledBarConfigs); // Pass the array to your load function
+              } else {
+                throw new Error('The loaded file does not contain an array.');
+              }
             }
+          } catch (error) {
+            console.error('Error loading or parsing file:', error);
+            // Handle the error appropriately
           }
-        } catch (error) {
-          console.error('Error loading or parsing file:', error);
-          // Handle the error appropriately
-        }
-      };
-      
-      reader.onerror = (e) => {
-        console.error('FileReader error:', e);
-        // Handle FileReader errors appropriately
-      };
+        };
+        
+        reader.onerror = (e) => {
+          console.error('FileReader error:', e);
+          // Handle FileReader errors appropriately
+        };
 
-      reader.readAsText(file);
+        reader.readAsText(file);
+      }
     }
-  }
-};
-
-  
+  };
 
   const handleLoadClick = () => {
     fileInputRef.current?.click(); // Open the file dialog

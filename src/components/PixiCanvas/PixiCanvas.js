@@ -11,7 +11,7 @@ let powerSource = null;
 // This could be in a constants.js file or similar
 
 const LEDS_PER_METER = 58;  // 1 meter = 200 pixels
-let scale = 0.6;
+let scale = 0.5;
 let ledBarHeight = 15 * scale; // pixels
 let meterToPixels = 200 * scale;  // 1 meter = 200 pixels
 
@@ -22,7 +22,56 @@ function init() {
     app.current.stage.hitArea = app.current.screen;
     app.current.stage.on('pointerup', onDragEnd);
     app.current.stage.on('pointerupoutside', onDragEnd);
+    addPicture('grondplan.png');
+
 }
+
+function addPicture(imagePath) {
+        // Path to your sprite image
+    const spriteImagePath = imagePath;
+
+    // Create a texture from an image path
+    const texture = PIXI.Texture.from(spriteImagePath);
+
+    // Create a sprite from the texture
+    const sprite = new PIXI.Sprite(texture);
+
+    // Set the sprite's anchor point to the center
+    sprite.anchor.set(0.);
+
+    // Position the sprite in the center of the screen
+    sprite.x = 50;
+    sprite.y = 50;
+
+    sprite.scale.set(1.3)
+    sprite.alpha = 0.5;
+
+    const colorMatrix = new PIXI.filters.ColorMatrixFilter();
+    colorMatrix.negative(false); // Passing false will not leave the luminance unchanged
+    sprite.filters = [colorMatrix];
+
+    // Add the sprite to the stage
+    app.current.stage.addChild(sprite);
+}
+
+function toggleBrightness(app, brightness = 0.1) {
+    // Assuming there's a global variable to keep track of the current brightness state
+    if (!app.current.brightnessState || app.current.brightnessState === 1) {
+        app.current.stage.children.forEach(child => {
+            child.filters = [new PIXI.filters.ColorMatrixFilter()];
+            child.filters[0].brightness(brightness, false);
+        });
+        app.current.brightnessState = brightness;
+    } else {
+        app.current.stage.children.forEach(child => {
+            if (child.filters && child.filters.length > 0) {
+                child.filters[0].brightness(1, false); // Reset brightness
+            }
+        });
+        app.current.brightnessState = 1;
+    }
+}
+
 
 function saveLayout() {
     let ledBarConfigs = [];
@@ -389,7 +438,7 @@ class LedBar {
         text.y = -20;
 
         let blurFilter = new PIXI.BlurFilter();
-        blurFilter.blur = 10;
+        blurFilter.blur = 9*scale;
         ledBar.filters = [blurFilter];
         
         diffuser.x = startPoint.x;

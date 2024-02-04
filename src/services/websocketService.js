@@ -51,8 +51,9 @@ class WebSocketService {
             let hexValue = hexStringWithoutHeader.substr(i, 6);
             hexValue = parseInt(hexValue, 16)
             hexValues.push(hexValue);
+            hexValues.push(hexValue);
         }
-
+        console.log('hexValues:', hexValues.length);
         return hexValues;
     }
   

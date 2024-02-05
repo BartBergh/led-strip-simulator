@@ -1,0 +1,139 @@
+2024-02-05 23:37:28,780 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
+2024-02-05 23:37:28,780 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
+2024-02-05 23:37:28,780 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
+2024-02-05 23:37:28,795 ledfx.sentry_config            INFO     Sentry Configuration:
+2024-02-05 23:37:28,795 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
+2024-02-05 23:37:28,795 ledfx.sentry_config            INFO     Sample rate: 1
+2024-02-05 23:37:28,795 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
+2024-02-05 23:37:28,804 ledfx.__main__                 INFO     LedFx Core is initializing
+2024-02-05 23:37:28,804 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
+2024-02-05 23:37:28,807 ledfx.core                     INFO     Using uvloop for asyncio loop
+2024-02-05 23:37:28,870 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
+2024-02-05 23:39:27,974 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:39:27,974 ledfx.api.websocket            INFO     Starting sender
+2024-02-05 23:39:28,082 ledfx.api.notification         INFO     notify: Update available --- A new version of LedFx has been released
+2024-02-05 23:39:36,700 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:40:23,391 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
+2024-02-05 23:40:23,391 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
+2024-02-05 23:40:23,391 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
+2024-02-05 23:40:23,409 ledfx.sentry_config            INFO     Sentry Configuration:
+2024-02-05 23:40:23,410 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
+2024-02-05 23:40:23,410 ledfx.sentry_config            INFO     Sample rate: 1
+2024-02-05 23:40:23,410 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
+2024-02-05 23:40:23,419 ledfx.__main__                 INFO     LedFx Core is initializing
+2024-02-05 23:40:23,433 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
+2024-02-05 23:40:23,436 ledfx.core                     INFO     Using uvloop for asyncio loop
+2024-02-05 23:40:23,501 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
+2024-02-05 23:40:23,546 ledfx.devices                  INFO     Loading device from config: {'config': {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.0.123', 'name': 'wled', 'pixel_count': 1925, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}, 'id': 'wled', 'type': 'wled'}
+2024-02-05 23:40:23,546 ledfx.devices                  INFO     Device wled: Resolved destination to 192.168.0.123
+2024-02-05 23:40:23,546 ledfx.utils                    INFO     WLED 192.168.0.123: Attempting to contact device...
+2024-02-05 23:40:23,663 ledfx.utils                    INFO     WLED 192.168.0.123: Received config
+2024-02-05 23:40:23,663 ledfx.devices.wled             INFO     WLED Build Supports Sync Setting API: 2310130
+2024-02-05 23:40:23,768 ledfx.effects                  INFO     Effect Rainbow activated.
+2024-02-05 23:40:23,770 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,771 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:40:23,783 ledfx.effects.audio            INFO     Audio source opened: ALSA: default
+2024-02-05 23:40:23,804 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,804 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:40:23,806 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,806 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:40:23,809 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,809 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-05 23:40:23,810 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:40:23,825 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,826 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:40:23,841 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,842 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:40:23,844 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:40:23,845 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-05 23:40:24,740 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:40:24,741 ledfx.api.websocket            INFO     Starting sender
+2024-02-05 23:40:27,956 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-05 23:40:27,956 ledfx.api.websocket            INFO     Stopping sender
+2024-02-05 23:40:27,956 ledfx.api.websocket            INFO     Closed connection
+2024-02-05 23:40:28,184 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:40:28,184 ledfx.api.websocket            INFO     Starting sender
+2024-02-05 23:40:28,363 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-05 23:40:28,363 ledfx.api.websocket            INFO     Stopping sender
+2024-02-05 23:40:28,364 ledfx.api.websocket            INFO     Closed connection
+2024-02-05 23:40:28,632 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:40:28,632 ledfx.api.websocket            INFO     Starting sender
+2024-02-05 23:41:11,602 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:41:11,602 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:41:11,602 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:41:11,602 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:41:11,603 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:41:11,603 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-05 23:41:11,990 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:41:11,990 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-05 23:41:11,997 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:41:11,997 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-05 23:41:11,998 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:41:11,998 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-05 23:41:17,733 ledfx.effects.audio            INFO     Audio source closed.
+2024-02-05 23:41:17,759 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-05 23:41:17,768 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:41:17,785 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-05 23:41:47,716 ledfx.effects.audio            INFO     Audio source closed.
+2024-02-05 23:41:47,733 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-05 23:41:47,749 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:41:47,763 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-05 23:44:00,816 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
+2024-02-05 23:44:00,816 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
+2024-02-05 23:44:00,816 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
+2024-02-05 23:44:00,837 ledfx.sentry_config            INFO     Sentry Configuration:
+2024-02-05 23:44:00,837 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
+2024-02-05 23:44:00,837 ledfx.sentry_config            INFO     Sample rate: 1
+2024-02-05 23:44:00,837 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
+2024-02-05 23:44:00,850 ledfx.__main__                 INFO     LedFx Core is initializing
+2024-02-05 23:44:00,851 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
+2024-02-05 23:44:00,855 ledfx.core                     INFO     Using uvloop for asyncio loop
+2024-02-05 23:44:00,944 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
+2024-02-05 23:44:01,006 ledfx.devices                  INFO     Loading device from config: {'config': {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.0.123', 'name': 'wled', 'pixel_count': 1925, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}, 'id': 'wled', 'type': 'wled'}
+2024-02-05 23:44:01,007 ledfx.devices                  INFO     Device wled: Resolved destination to 192.168.0.123
+2024-02-05 23:44:01,007 ledfx.utils                    INFO     WLED 192.168.0.123: Attempting to contact device...
+2024-02-05 23:44:01,039 ledfx.utils                    INFO     WLED 192.168.0.123: Received config
+2024-02-05 23:44:01,039 ledfx.devices.wled             INFO     WLED Build Supports Sync Setting API: 2310130
+2024-02-05 23:44:01,148 ledfx.effects                  INFO     Effect Rainbow activated.
+2024-02-05 23:44:01,150 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,150 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:44:01,166 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-05 23:44:01,187 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,187 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:44:01,192 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,193 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:44:01,193 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-05 23:44:01,197 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,198 ledfx.effects                  INFO     Effect Equalizer2d activated.
+2024-02-05 23:44:01,212 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,212 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:44:01,228 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,228 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:44:01,230 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:01,230 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-05 23:44:05,491 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:44:05,491 ledfx.api.websocket            INFO     Starting sender
+2024-02-05 23:44:19,170 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:19,170 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:44:19,171 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:19,171 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-05 23:44:19,172 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-05 23:44:19,172 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-05 23:44:19,561 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:44:19,562 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-05 23:44:19,562 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:44:19,563 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-05 23:44:19,563 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-05 23:44:19,563 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-05 23:44:24,831 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:44:27,472 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:44:28,358 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:44:46,921 ledfx.effects.audio            INFO     Audio source closed.
+2024-02-05 23:44:46,935 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-05 23:44:46,953 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-05 23:44:46,968 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-05 23:44:51,972 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-05 23:44:51,972 ledfx.api.websocket            INFO     Stopping sender
+2024-02-05 23:44:51,972 ledfx.api.websocket            INFO     Closed connection
+2024-02-05 23:44:52,198 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-05 23:44:52,198 ledfx.api.websocket            INFO     Starting sender

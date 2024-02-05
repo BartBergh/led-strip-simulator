@@ -1,0 +1,30 @@
+# Example docker compose config.
+version: "3.9"
+services:
+  ledfx-test:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+#    image: ledfx:git
+#    network_mode: host
+    ports: 
+      - 8888:8888
+#    tty: true
+    volumes:
+      - type: bind
+        source: ${XDG_RUNTIME_DIR}/pulse/native
+        target: ${XDG_RUNTIME_DIR}/pulse/native
+      - type: bind
+        source: ~/.config/pulse/cookie
+        target: /home/ledfx/.config/pulse/cookie
+        read_only: true
+      - type: bind
+        source: ${PWD}/config
+        target: /home/ledfx/.ledfx  
+    environment:
+      - PULSE_SERVER=unix:${XDG_RUNTIME_DIR}/pulse/native
+#      - PULSE_SERVER=unix:/root/audio/pulseaudio.socket
+#      - PULSE_SERVER=tcp:127.0.0.1
+#    restart: unless-stopped
+#    devices:
+#      - "/dev/snd"

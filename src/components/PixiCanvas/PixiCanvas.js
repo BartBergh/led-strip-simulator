@@ -457,7 +457,7 @@ class LedBar {
 
         if (timeSinceLastClick < doubleClickThreshold) {
             // Perform the rotation
-            this.rotate(90);
+            this.rotate(45);
         }
 
         this.lastClickTime = currentTime;
@@ -825,7 +825,7 @@ class Cable {
     
         // Adjust these values to change the curvature and loop size
         const curveDepth = 50;
-        const loopTrigger = 100;
+        const loopTrigger = 0;
         const loopRadius = 170;
     
         if (distance < loopTrigger) {

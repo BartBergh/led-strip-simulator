@@ -14,7 +14,7 @@
       "cable": {
         "startHandle": 1,
         "endHandle": 6,
-        "id": "25mwplref"
+        "id": "nxqr6yru6"
       }
     },
     "endPoint": {
@@ -30,7 +30,7 @@
       "cable": {
         "startHandle": 19,
         "endHandle": 2,
-        "id": "b4c1058ik"
+        "id": "wzlzgxg9k"
       }
     },
     "ledsPerMeter": "60.25"
@@ -50,7 +50,7 @@
       "cable": {
         "startHandle": 3,
         "endHandle": 26,
-        "id": "jm6vmqs9o"
+        "id": "i3adgi5d2"
       }
     },
     "endPoint": {
@@ -66,7 +66,7 @@
       "cable": {
         "startHandle": 11,
         "endHandle": 4,
-        "id": "1u0exhr2g"
+        "id": "e8h6oxu99"
       }
     },
     "ledsPerMeter": "60.25"
@@ -86,7 +86,7 @@
       "cable": {
         "startHandle": 5,
         "endHandle": 7,
-        "id": "v2p57oh5k"
+        "id": "1pc3tv0ii"
       }
     },
     "endPoint": {
@@ -102,7 +102,7 @@
       "cable": {
         "startHandle": 1,
         "endHandle": 6,
-        "id": "25mwplref"
+        "id": "nxqr6yru6"
       }
     },
     "ledsPerMeter": "60"
@@ -122,7 +122,7 @@
       "cable": {
         "startHandle": 5,
         "endHandle": 7,
-        "id": "v2p57oh5k"
+        "id": "1pc3tv0ii"
       }
     },
     "endPoint": {
@@ -154,7 +154,7 @@
       "cable": {
         "startHandle": 16,
         "endHandle": 9,
-        "id": "wcx7aw7er"
+        "id": "ls9hkss63"
       }
     },
     "endPoint": {
@@ -170,7 +170,7 @@
       "cable": {
         "startHandle": 10,
         "endHandle": 12,
-        "id": "x5voyxvgv"
+        "id": "b8nxlorj0"
       }
     },
     "ledsPerMeter": "60.25"
@@ -179,8 +179,8 @@
     "id": 5,
     "startPoint": {
       "coord": {
-        "x": 1216,
-        "y": 637
+        "x": 1210,
+        "y": 648
       },
       "ledBarId": 5,
       "id": 11,
@@ -190,13 +190,13 @@
       "cable": {
         "startHandle": 11,
         "endHandle": 4,
-        "id": "1u0exhr2g"
+        "id": "e8h6oxu99"
       }
     },
     "endPoint": {
       "coord": {
-        "x": 1616.0000000000002,
-        "y": 637
+        "x": 1610.0000000000002,
+        "y": 648
       },
       "ledBarId": 5,
       "id": 12,
@@ -206,7 +206,7 @@
       "cable": {
         "startHandle": 10,
         "endHandle": 12,
-        "id": "x5voyxvgv"
+        "id": "b8nxlorj0"
       }
     },
     "ledsPerMeter": "60"
@@ -226,7 +226,7 @@
       "cable": {
         "startHandle": 13,
         "endHandle": 17,
-        "id": "j8v59g5yt"
+        "id": "kofbgvn19"
       }
     },
     "endPoint": {
@@ -242,7 +242,7 @@
       "cable": {
         "startHandle": 21,
         "endHandle": 14,
-        "id": "frs86pt1f"
+        "id": "36yxj8me1"
       }
     },
     "ledsPerMeter": "57"
@@ -252,7 +252,7 @@
     "startPoint": {
       "coord": {
         "x": 2077,
-        "y": 226
+        "y": 244
       },
       "ledBarId": 7,
       "id": 15,
@@ -262,13 +262,13 @@
       "cable": {
         "startHandle": -1,
         "endHandle": 15,
-        "id": "uwcenb937"
+        "id": "cps0vl1rl"
       }
     },
     "endPoint": {
       "coord": {
         "x": 2077,
-        "y": 626
+        "y": 644
       },
       "ledBarId": 7,
       "id": 16,
@@ -278,7 +278,7 @@
       "cable": {
         "startHandle": 16,
         "endHandle": 9,
-        "id": "wcx7aw7er"
+        "id": "ls9hkss63"
       }
     },
     "ledsPerMeter": "60.5"
@@ -295,7 +295,11 @@
       "isStartPoint": true,
       "sibling": 18,
       "linkedHandle": 13,
-      "cable": null
+      "cable": {
+        "startHandle": 13,
+        "endHandle": 17,
+        "id": "kofbgvn19"
+      }
     },
     "endPoint": {
       "coord": {
@@ -310,7 +314,7 @@
       "cable": {
         "startHandle": 18,
         "endHandle": 20,
-        "id": "r1j9qmy7y"
+        "id": "hww5k69bc"
       }
     },
     "ledsPerMeter": "57"
@@ -330,7 +334,7 @@
       "cable": {
         "startHandle": 19,
         "endHandle": 2,
-        "id": "b4c1058ik"
+        "id": "wzlzgxg9k"
       }
     },
     "endPoint": {
@@ -346,7 +350,7 @@
       "cable": {
         "startHandle": 18,
         "endHandle": 20,
-        "id": "r1j9qmy7y"
+        "id": "hww5k69bc"
       }
     },
     "ledsPerMeter": "58"
@@ -366,7 +370,7 @@
       "cable": {
         "startHandle": 21,
         "endHandle": 14,
-        "id": "frs86pt1f"
+        "id": "36yxj8me1"
       }
     },
     "endPoint": {
@@ -382,7 +386,7 @@
       "cable": {
         "startHandle": 24,
         "endHandle": 22,
-        "id": "ovyzb2117"
+        "id": "imcjmuzma"
       }
     },
     "ledsPerMeter": "57"
@@ -402,7 +406,7 @@
       "cable": {
         "startHandle": 25,
         "endHandle": 23,
-        "id": "75oouqvps"
+        "id": "2sfmddyx8"
       }
     },
     "endPoint": {
@@ -418,7 +422,7 @@
       "cable": {
         "startHandle": 24,
         "endHandle": 22,
-        "id": "ovyzb2117"
+        "id": "imcjmuzma"
       }
     },
     "ledsPerMeter": "55"
@@ -438,7 +442,7 @@
       "cable": {
         "startHandle": 25,
         "endHandle": 23,
-        "id": "75oouqvps"
+        "id": "2sfmddyx8"
       }
     },
     "endPoint": {
@@ -454,7 +458,7 @@
       "cable": {
         "startHandle": 3,
         "endHandle": 26,
-        "id": "jm6vmqs9o"
+        "id": "i3adgi5d2"
       }
     },
     "ledsPerMeter": "58"

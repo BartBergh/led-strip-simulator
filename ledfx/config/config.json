@@ -1,6 +1,6 @@
 {
     "audio": {
-        "audio_device": 1,
+        "audio_device": 0,
         "min_volume": 0.2
     },
     "configuration_version": "2.3.0",
@@ -12,9 +12,9 @@
                 "center_offset": 0,
                 "create_segments": false,
                 "icon_name": "wled",
-                "ip_address": "192.168.0.123",
-                "name": "wled",
-                "pixel_count": 1925,
+                "ip_address": "192.168.2.99",
+                "name": "WLED-SoundReactive",
+                "pixel_count": 2019,
                 "refresh_rate": 62,
                 "rgbw_led": false,
                 "sync_mode": "DDP",
@@ -880,15 +880,15 @@
                 }
             }
         },
-        "strob": {
-            "name": "strob",
+        "strobe": {
+            "name": "strobe",
             "scene_image": "Wallpaper",
             "scene_midiactivate": null,
             "scene_payload": null,
             "scene_puturl": null,
             "scene_tags": null,
             "virtuals": {
-                "behind-dj": {
+                "all": {
                     "config": {
                         "background_brightness": 1,
                         "background_color": "#000000",
@@ -903,8 +903,18 @@
                         "strobe_frequency": "1/1 (.,. )"
                     },
                     "type": "strobe"
-                },
-                "big-arrow": {
+                }
+            }
+        },
+        "strobe-double-time": {
+            "name": "strobe double time",
+            "scene_image": "Wallpaper",
+            "scene_midiactivate": null,
+            "scene_payload": null,
+            "scene_puturl": null,
+            "scene_tags": null,
+            "virtuals": {
+                "all": {
                     "config": {
                         "background_brightness": 1,
                         "background_color": "#000000",
@@ -916,87 +926,7 @@
                         "gradient_roll": 0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                },
-                "inner-sides": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                },
-                "sides": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                },
-                "small-arrow-1": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                },
-                "small-arrow-2": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                },
-                "small-arrow-3": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 }
@@ -1260,20 +1190,36 @@
                 "config": {
                     "background_brightness": 1.0,
                     "background_color": "#000000",
+                    "beat_decay": 2.0,
                     "blur": 0.0,
                     "brightness": 1.0,
                     "flip": false,
-                    "gradient": "linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 120, 0) 14%, rgb(255, 200, 0) 28%, rgb(0, 255, 0) 42%, rgb(0, 199, 140) 56%, rgb(0, 0, 255) 70%, rgb(128, 0, 128) 84%, rgb(255, 0, 178) 98%)",
+                    "gradient": "#ffffff",
                     "gradient_roll": 0.0,
                     "mirror": false,
-                    "modulate": false,
-                    "modulation_effect": "sine",
-                    "modulation_speed": 0.5,
-                    "speed": 1.0
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/2 (.-. )"
                 },
-                "type": "gradient"
+                "type": "strobe"
             },
             "effects": {
+                "blade_power_plus": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "blur": 2.0,
+                        "brightness": 1.0,
+                        "decay": 0.7,
+                        "flip": false,
+                        "frequency_range": "Lows (beat+bass)",
+                        "gradient": "linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 120, 0) 14%, rgb(255, 200, 0) 28%, rgb(0, 255, 0) 42%, rgb(0, 199, 140) 56%, rgb(0, 0, 255) 70%, rgb(128, 0, 128) 84%, rgb(255, 0, 178) 98%)",
+                        "gradient_roll": 0.0,
+                        "invert_roll": false,
+                        "mirror": false,
+                        "multiplier": 0.5
+                    },
+                    "type": "blade_power_plus"
+                },
                 "gradient": {
                     "config": {
                         "background_brightness": 1.0,
@@ -1291,6 +1237,25 @@
                     },
                     "type": "gradient"
                 },
+                "real_strobe": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "bass_strobe_decay_rate": 0.5,
+                        "blur": 0.0,
+                        "brightness": 1.0,
+                        "color_shift_delay": 1.0,
+                        "color_step": 0.0625,
+                        "flip": false,
+                        "gradient": "Dancefloor",
+                        "gradient_roll": 0.0,
+                        "mirror": false,
+                        "strobe_color": "#ffffff",
+                        "strobe_decay_rate": 0.5,
+                        "strobe_width": 10
+                    },
+                    "type": "real_strobe"
+                },
                 "singleColor": {
                     "config": {
                         "background_brightness": 1.0,
@@ -1306,6 +1271,22 @@
                         "speed": 1.0
                     },
                     "type": "singleColor"
+                },
+                "strobe": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "beat_decay": 2.0,
+                        "blur": 0.0,
+                        "brightness": 1.0,
+                        "flip": false,
+                        "gradient": "#ffffff",
+                        "gradient_roll": 0.0,
+                        "mirror": false,
+                        "strobe_decay": 1.5,
+                        "strobe_frequency": "1/2 (.-. )"
+                    },
+                    "type": "strobe"
                 }
             },
             "id": "wled",
@@ -1314,7 +1295,7 @@
                 [
                     "wled",
                     0,
-                    1924,
+                    2018,
                     false
                 ]
             ]
@@ -1339,16 +1320,17 @@
                 "config": {
                     "background_brightness": 1.0,
                     "background_color": "#000000",
+                    "beat_decay": 2.0,
                     "blur": 0.0,
                     "brightness": 1.0,
                     "flip": false,
-                    "gradient": "linear-gradient(90deg, #e5ff00 0.00%,#ff00ef 100.00%)",
+                    "gradient": "#ffffff",
                     "gradient_roll": 0.0,
-                    "mirror": true,
-                    "reactivity": 0.2,
-                    "speed": 0.32
+                    "mirror": false,
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/2 (.-. )"
                 },
-                "type": "energy2"
+                "type": "strobe"
             },
             "effects": {
                 "energy": {
@@ -1573,7 +1555,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 },
@@ -1597,7 +1579,7 @@
                 [
                     "wled",
                     0,
-                    241,
+                    242,
                     false
                 ]
             ]
@@ -1630,7 +1612,7 @@
                     "gradient_roll": 0.0,
                     "mirror": false,
                     "strobe_decay": 1.5,
-                    "strobe_frequency": "1/1 (.,. )"
+                    "strobe_frequency": "1/2 (.-. )"
                 },
                 "type": "strobe"
             },
@@ -1875,7 +1857,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 }
@@ -1885,20 +1867,20 @@
             "segments": [
                 [
                     "wled",
-                    1076,
-                    1130,
+                    1083,
+                    1140,
                     false
                 ],
                 [
                     "wled",
-                    1131,
-                    1188,
+                    1141,
+                    1198,
                     false
                 ]
             ]
         },
         {
-            "active": false,
+            "active": true,
             "auto_generated": false,
             "config": {
                 "center_offset": 0,
@@ -1917,17 +1899,17 @@
                 "config": {
                     "background_brightness": 1.0,
                     "background_color": "#000000",
-                    "bass_decay_rate": 0.05,
+                    "beat_decay": 2.0,
                     "blur": 0.0,
                     "brightness": 1.0,
                     "flip": false,
-                    "gradient": "linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 120, 0) 14%, rgb(255, 200, 0) 28%, rgb(0, 255, 0) 42%, rgb(0, 199, 140) 56%, rgb(0, 0, 255) 70%, rgb(128, 0, 128) 84%, rgb(255, 0, 178) 98%)",
+                    "gradient": "#ffffff",
                     "gradient_roll": 0.0,
-                    "mirror": true,
-                    "sparks_color": "#ffffff",
-                    "sparks_decay_rate": 0.15
+                    "mirror": false,
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/2 (.-. )"
                 },
-                "type": "power"
+                "type": "strobe"
             },
             "effects": {
                 "blade_power_plus": {
@@ -1946,6 +1928,21 @@
                         "multiplier": 0.8
                     },
                     "type": "blade_power_plus"
+                },
+                "energy2": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "blur": 0.0,
+                        "brightness": 1.0,
+                        "flip": false,
+                        "gradient": "#0000ff",
+                        "gradient_roll": 0.0,
+                        "mirror": true,
+                        "reactivity": 0.54,
+                        "speed": 0.54
+                    },
+                    "type": "energy2"
                 },
                 "equalizer": {
                     "config": {
@@ -2157,11 +2154,11 @@
                         "blur": 0.0,
                         "brightness": 1.0,
                         "flip": false,
-                        "gradient": "#ff00ff",
+                        "gradient": "#ffffff",
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 },
@@ -2184,14 +2181,14 @@
             "segments": [
                 [
                     "wled",
-                    242,
-                    483,
+                    243,
+                    484,
                     false
                 ],
                 [
                     "wled",
-                    1785,
-                    2027,
+                    1798,
+                    2040,
                     false
                 ]
             ]
@@ -2224,7 +2221,7 @@
                     "gradient_roll": 0.0,
                     "mirror": false,
                     "strobe_decay": 1.5,
-                    "strobe_frequency": "1/1 (.,. )"
+                    "strobe_frequency": "1/2 (.-. )"
                 },
                 "type": "strobe"
             },
@@ -2405,7 +2402,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 }
@@ -2415,14 +2412,14 @@
             "segments": [
                 [
                     "wled",
-                    1021,
-                    1075,
+                    1026,
+                    1082,
                     true
                 ],
                 [
                     "wled",
-                    1189,
-                    1245,
+                    1200,
+                    1256,
                     true
                 ]
             ]
@@ -2455,7 +2452,7 @@
                     "gradient_roll": 0.0,
                     "mirror": false,
                     "strobe_decay": 1.5,
-                    "strobe_frequency": "1/1 (.,. )"
+                    "strobe_frequency": "1/2 (.-. )"
                 },
                 "type": "strobe"
             },
@@ -2609,7 +2606,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 }
@@ -2619,20 +2616,20 @@
             "segments": [
                 [
                     "wled",
-                    963,
-                    1020,
+                    967,
+                    1025,
                     false
                 ],
                 [
                     "wled",
-                    1246,
-                    1303,
+                    1257,
+                    1315,
                     false
                 ]
             ]
         },
         {
-            "active": false,
+            "active": true,
             "auto_generated": false,
             "config": {
                 "center_offset": 0,
@@ -2651,26 +2648,17 @@
                 "config": {
                     "background_brightness": 1.0,
                     "background_color": "#000000",
-                    "blur": 3.0,
-                    "bounce": true,
+                    "beat_decay": 2.0,
+                    "blur": 0.0,
                     "brightness": 1.0,
-                    "color_intensity": true,
-                    "color_scan": "#ffffff",
-                    "flip": true,
-                    "frequency_range": "Lows (beat+bass)",
-                    "gradient": "linear-gradient(90deg, rgb(0, 255, 0) 0%, rgb(34, 139, 34) 50%, rgb(255, 120, 0) 100%)",
+                    "flip": false,
+                    "gradient": "#ffffff",
                     "gradient_roll": 0.0,
-                    "mirror": true,
-                    "multiplier": 5.0,
-                    "scan_width": 31,
-                    "sparkles_max": 2,
-                    "sparkles_size": 0.1,
-                    "sparkles_threshold": 0.6,
-                    "sparkles_time": 1.0,
-                    "speed": 50,
-                    "use_grad": true
+                    "mirror": false,
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/2 (.-. )"
                 },
-                "type": "scan_and_flare"
+                "type": "strobe"
             },
             "effects": {
                 "bar": {
@@ -3028,7 +3016,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 },
@@ -3070,14 +3058,14 @@
             "segments": [
                 [
                     "wled",
-                    484,
-                    721,
+                    485,
+                    725,
                     true
                 ],
                 [
                     "wled",
-                    1545,
-                    1784,
+                    1557,
+                    1797,
                     true
                 ]
             ]
@@ -3102,26 +3090,17 @@
                 "config": {
                     "background_brightness": 1.0,
                     "background_color": "#000000",
-                    "blur": 3.0,
-                    "bounce": true,
+                    "beat_decay": 2.0,
+                    "blur": 0.0,
                     "brightness": 1.0,
-                    "color_intensity": true,
-                    "color_scan": "#ffffff",
-                    "flip": true,
-                    "frequency_range": "Lows (beat+bass)",
-                    "gradient": "linear-gradient(90deg, #00ff00 0.00%,#f1ff00 51.00%,#228b6b 98.00%)",
+                    "flip": false,
+                    "gradient": "#ffffff",
                     "gradient_roll": 0.0,
-                    "mirror": true,
-                    "multiplier": 5.0,
-                    "scan_width": 45,
-                    "sparkles_max": 4,
-                    "sparkles_size": 0.1,
-                    "sparkles_threshold": 0.6,
-                    "sparkles_time": 1.0,
-                    "speed": 50,
-                    "use_grad": true
+                    "mirror": false,
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/2 (.-. )"
                 },
-                "type": "scan_and_flare"
+                "type": "strobe"
             },
             "effects": {
                 "bar": {
@@ -3377,7 +3356,7 @@
                     "config": {
                         "background_brightness": 1.0,
                         "background_color": "#000000",
-                        "beat_decay": 1.5,
+                        "beat_decay": 2.0,
                         "blur": 0.0,
                         "brightness": 1.0,
                         "flip": false,
@@ -3385,7 +3364,7 @@
                         "gradient_roll": 0.0,
                         "mirror": false,
                         "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
+                        "strobe_frequency": "1/2 (.-. )"
                     },
                     "type": "strobe"
                 },
@@ -3408,14 +3387,14 @@
             "segments": [
                 [
                     "wled",
-                    722,
-                    962,
+                    726,
+                    966,
                     false
                 ],
                 [
                     "wled",
-                    1305,
-                    1543,
+                    1316,
+                    1556,
                     false
                 ]
             ]
@@ -3815,14 +3794,14 @@
             "segments": [
                 [
                     "wled",
-                    301,
-                    483,
+                    302,
+                    484,
                     false
                 ],
                 [
                     "wled",
-                    1785,
-                    1968,
+                    1798,
+                    1982,
                     false
                 ]
             ]
@@ -4322,50 +4301,50 @@
             "segments": [
                 [
                     "wled",
-                    242,
-                    300,
+                    243,
+                    301,
                     false
                 ],
                 [
                     "wled",
-                    1969,
-                    2027,
+                    1983,
+                    2040,
                     false
                 ],
                 [
                     "wled",
-                    1076,
-                    1130,
+                    1083,
+                    1140,
                     false
                 ],
                 [
                     "wled",
-                    1131,
-                    1188,
+                    1141,
+                    1198,
                     false
                 ],
                 [
                     "wled",
-                    1021,
-                    1075,
+                    1026,
+                    1082,
                     false
                 ],
                 [
                     "wled",
-                    1189,
-                    1245,
+                    1200,
+                    1256,
                     false
                 ],
                 [
                     "wled",
-                    963,
-                    1020,
+                    967,
+                    1025,
                     true
                 ],
                 [
                     "wled",
-                    1246,
-                    1303,
+                    1257,
+                    1315,
                     false
                 ]
             ]
@@ -4478,15 +4457,75 @@
             "segments": [
                 [
                     "wled",
-                    242,
-                    300,
+                    243,
+                    301,
                     true
                 ],
                 [
                     "wled",
-                    1969,
-                    2027,
+                    1983,
+                    2040,
                     true
+                ]
+            ]
+        },
+        {
+            "auto_generated": false,
+            "config": {
+                "center_offset": 0,
+                "frequency_max": 15000,
+                "frequency_min": 20,
+                "icon_name": "mdi:led-strip-variant",
+                "mapping": "span",
+                "max_brightness": 1.0,
+                "name": "all",
+                "preview_only": false,
+                "rows": 1,
+                "transition_mode": "Add",
+                "transition_time": 0.4
+            },
+            "effect": {
+                "config": {
+                    "background_brightness": 1.0,
+                    "background_color": "#000000",
+                    "beat_decay": 2.0,
+                    "blur": 0.0,
+                    "brightness": 1.0,
+                    "flip": false,
+                    "gradient": "#ffffff",
+                    "gradient_roll": 0.0,
+                    "mirror": false,
+                    "strobe_decay": 1.5,
+                    "strobe_frequency": "1/1 (.,. )"
+                },
+                "type": "strobe"
+            },
+            "effects": {
+                "strobe": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "beat_decay": 2.0,
+                        "blur": 0.0,
+                        "brightness": 1.0,
+                        "flip": false,
+                        "gradient": "#ffffff",
+                        "gradient_roll": 0.0,
+                        "mirror": false,
+                        "strobe_decay": 1.5,
+                        "strobe_frequency": "1/1 (.,. )"
+                    },
+                    "type": "strobe"
+                }
+            },
+            "id": "all",
+            "is_device": false,
+            "segments": [
+                [
+                    "wled",
+                    0,
+                    2040,
+                    false
                 ]
             ]
         }

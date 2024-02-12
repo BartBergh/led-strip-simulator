@@ -1,571 +1,1082 @@
-2024-02-11 16:07:50,758 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:07:50,768 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:07:50,771 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:07:50,772 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:07:50,772 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:07:50,772 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:07:50,777 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:07:50,778 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:07:50,815 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:07:50,815 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:13,616 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:13,616 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:13,616 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:13,617 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:13,619 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:13,619 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:13,620 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:13,620 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:13,622 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:13,622 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:13,622 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:13,622 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:13,624 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:08:14,005 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:14,005 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:14,008 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:14,008 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:14,010 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:14,010 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:24,209 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:08:25,000 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:08:27,195 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:08:38,142 ledfx.effects                  INFO     Effect Single Color deactivated.
-2024-02-11 16:08:38,144 ledfx.effects                  INFO     Effect Single Color activated.
-2024-02-11 16:08:38,218 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,218 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:08:38,219 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
-2024-02-11 16:08:38,235 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,235 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:38,236 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,236 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:08:38,236 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,237 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:08:38,238 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,239 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:38,240 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,241 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:38,242 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,244 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:08:38,246 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,246 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:08:38,248 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,249 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:08:38,257 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,258 ledfx.effects                  INFO     Effect PlasmaWled2d deactivated.
-2024-02-11 16:08:38,258 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,258 ledfx.effects                  INFO     Effect PlasmaWled2d activated.
-2024-02-11 16:08:38,291 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:38,293 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:38,620 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,620 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:08:38,631 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,631 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:08:38,633 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,634 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:08:38,640 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,640 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:08:38,693 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:38,693 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:51,705 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:08:52,761 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,762 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:08:52,763 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:52,763 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:52,763 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,764 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:52,765 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:52,765 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:52,765 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,765 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:52,767 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:52,767 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:52,767 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,768 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:52,769 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,769 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:08:52,769 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,769 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:08:52,770 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,770 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:08:52,771 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:08:52,771 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:08:53,151 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,151 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:53,151 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,151 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:08:53,152 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,152 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:53,154 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,154 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:53,163 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,164 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:08:53,164 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,165 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:08:53,165 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,165 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:08:53,169 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:08:53,170 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:09:26,269 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:09:27,758 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:09:40,849 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:09:41,567 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:32,605 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:35,067 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:42,401 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:50,013 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:51,666 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:53,836 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:11:55,679 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:01,951 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:06,324 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:31,471 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:36,812 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:38,489 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:42,290 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:43,440 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:45,188 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:51,845 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:53,159 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:56,123 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:57,427 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:12:59,524 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:00,706 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:01,514 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:05,216 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:07,778 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:08,655 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:09,728 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:14,595 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:15,916 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:19,298 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:19,995 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:20,856 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:22,018 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:23,628 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:29,502 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:34,524 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:39,709 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:13:58,357 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:14:07,379 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:14:07,504 ledfx.effects                  INFO     Effect Single Color deactivated.
-2024-02-11 16:14:07,504 ledfx.effects                  INFO     Effect Single Color activated.
-2024-02-11 16:14:07,582 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,582 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:14:07,583 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
-2024-02-11 16:14:07,599 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,599 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:07,600 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:07,600 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:14:07,601 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,601 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:14:07,603 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,604 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:07,605 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,605 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:07,606 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,606 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:14:07,608 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,608 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:14:07,610 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,611 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:14:07,620 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:07,620 ledfx.effects                  INFO     Effect PlasmaWled2d deactivated.
-2024-02-11 16:14:07,620 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,621 ledfx.effects                  INFO     Effect PlasmaWled2d activated.
-2024-02-11 16:14:07,639 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:07,639 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:07,984 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:07,984 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:14:07,994 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:07,994 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:14:07,995 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:07,996 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:14:08,004 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:08,005 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:14:08,041 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:08,041 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:24,557 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:14:25,740 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,740 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:14:25,741 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:25,741 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:25,741 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,741 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:25,742 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:25,742 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:25,742 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,742 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:25,744 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:25,744 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:25,745 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,745 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:25,746 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,746 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:14:25,749 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,749 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:14:25,750 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,750 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:14:25,751 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:25,751 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:14:26,128 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,128 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:26,129 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,130 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:26,132 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,132 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:26,139 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,139 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:14:26,145 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,145 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:14:26,145 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,145 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:14:26,146 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,146 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:14:26,148 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:26,148 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:14:38,291 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:14:38,291 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:14:38,292 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:14:38,704 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:14:38,705 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:14:47,350 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:02,463 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:14,854 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:15:14,854 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:15:14,854 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:15,241 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:15:15,242 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:15:27,963 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:33,320 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:44,497 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:51,427 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:52,903 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:56,774 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:15:57,935 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:15,487 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:16:15,489 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:16:15,490 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:15,876 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:16:15,876 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:16:24,686 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:24,900 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:41,072 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:52,813 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:16:57,416 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:01,911 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:03,123 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:04,048 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:05,076 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:09,785 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:10,590 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:11,423 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:12,341 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:13,731 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:15,967 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:16,897 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:18,552 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:21,927 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:23,652 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:26,627 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:27,703 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:52,672 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:17:52,673 ledfx.effects                  INFO     Effect PlasmaWled2d deactivated.
-2024-02-11 16:17:52,673 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:17:52,673 ledfx.effects                  INFO     Effect Scan activated.
-2024-02-11 16:17:52,698 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:17:53,117 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:17:53,117 ledfx.effects                  INFO     Effect PlasmaWled2d deactivated.
-2024-02-11 16:18:03,006 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:08,639 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:09,671 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:12,392 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:16,209 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:18:16,209 ledfx.effects                  INFO     Effect Scan activated.
-2024-02-11 16:18:16,209 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:16,603 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:18:16,604 ledfx.effects                  INFO     Effect Scan deactivated.
-2024-02-11 16:18:33,555 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:58,213 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:18:58,213 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:18:58,214 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:18:58,635 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:18:58,635 ledfx.effects                  INFO     Effect Scan deactivated.
-2024-02-11 16:19:12,433 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:19:12,434 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:19:12,435 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:19:12,821 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:19:12,822 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:19:49,977 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:19:49,977 ledfx.effects                  INFO     Effect Glitch activated.
-2024-02-11 16:19:49,977 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:19:50,408 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:19:50,408 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:19:54,383 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:19:54,383 ledfx.effects                  INFO     Effect Marching activated.
-2024-02-11 16:19:54,386 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:19:54,867 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:19:54,868 ledfx.effects                  INFO     Effect Glitch deactivated.
-2024-02-11 16:19:59,535 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:19:59,535 ledfx.effects                  INFO     Effect Melt and Sparkle activated.
-2024-02-11 16:19:59,535 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:19:59,991 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:19:59,991 ledfx.effects                  INFO     Effect Marching deactivated.
-2024-02-11 16:20:03,376 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:20:09,404 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:20:28,032 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:20:28,032 ledfx.effects                  INFO     Effect Marching activated.
-2024-02-11 16:20:28,032 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:20:28,468 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:20:28,468 ledfx.effects                  INFO     Effect Melt and Sparkle deactivated.
-2024-02-11 16:20:30,636 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:20:30,636 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:20:30,636 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:20:31,089 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:20:31,089 ledfx.effects                  INFO     Effect Marching deactivated.
-2024-02-11 16:20:35,376 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:20:40,120 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:21:46,975 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:21:47,078 ledfx.effects                  INFO     Effect Single Color deactivated.
-2024-02-11 16:21:47,078 ledfx.effects                  INFO     Effect Single Color activated.
-2024-02-11 16:21:47,120 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,121 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:21:47,121 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
-2024-02-11 16:21:47,137 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,137 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:21:47,138 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,138 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:21:47,139 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,139 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:21:47,142 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,142 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:21:47,143 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,143 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:21:47,145 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,146 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:21:47,148 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,149 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:21:47,151 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,152 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:21:47,158 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,159 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:21:47,177 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:21:47,177 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:21:47,522 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,523 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:21:47,532 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,533 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:21:47,536 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,537 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:21:47,544 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,544 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:21:47,579 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:21:47,580 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:22:09,408 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
-2024-02-11 16:22:10,934 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:10,934 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:22:10,935 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:10,936 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:10,937 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:10,938 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:10,938 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:10,938 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:22:10,939 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:10,939 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:10,939 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:10,939 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:11,321 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:11,322 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:22:11,331 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:11,332 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:22:11,334 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:11,334 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:11,335 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:11,335 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:11,339 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:11,339 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:16,197 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:16,199 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:22:16,202 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:16,202 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:16,204 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:16,204 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:16,205 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:16,205 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:22:16,208 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:16,208 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:16,584 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:16,584 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:22:16,600 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:16,600 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:22:16,602 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:16,602 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:16,603 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:16,603 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:16,603 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:16,604 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:41,942 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:41,942 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:22:41,943 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:41,943 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:41,944 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:41,945 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:41,946 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:41,947 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:22:41,949 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:22:41,949 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:22:42,330 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:42,331 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:42,333 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:42,333 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:22:42,334 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:42,334 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:22:42,335 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:42,335 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:22:42,335 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:22:42,336 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:41,910 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
-2024-02-11 16:24:41,910 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
-2024-02-11 16:24:41,911 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
-2024-02-11 16:24:41,934 ledfx.sentry_config            INFO     Sentry Configuration:
-2024-02-11 16:24:41,934 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
-2024-02-11 16:24:41,934 ledfx.sentry_config            INFO     Sample rate: 1
-2024-02-11 16:24:41,934 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
-2024-02-11 16:24:41,947 ledfx.__main__                 INFO     LedFx Core is initializing
-2024-02-11 16:24:41,950 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
-2024-02-11 16:24:41,954 ledfx.core                     INFO     Using uvloop for asyncio loop
-2024-02-11 16:24:42,027 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
-2024-02-11 16:24:42,075 ledfx.devices                  INFO     Loading device from config: {'config': {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.0.123', 'name': 'wled', 'pixel_count': 1925, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}, 'id': 'wled', 'type': 'wled'}
-2024-02-11 16:24:42,076 ledfx.devices                  INFO     Device wled: Resolved destination to 192.168.0.123
-2024-02-11 16:24:42,076 ledfx.utils                    INFO     WLED 192.168.0.123: Attempting to contact device...
-2024-02-11 16:24:42,100 ledfx.utils                    INFO     WLED 192.168.0.123: Received config
-2024-02-11 16:24:42,101 ledfx.devices.wled             INFO     WLED Build Supports Sync Setting API: 2310130
-2024-02-11 16:24:42,258 ledfx.effects                  INFO     Effect Gradient activated.
-2024-02-11 16:24:42,260 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,260 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:24:42,277 ledfx.effects.audio            INFO     Audio source opened: ALSA: default
-2024-02-11 16:24:42,310 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,310 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:24:42,312 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,312 ledfx.effects                  INFO     Effect Power activated.
-2024-02-11 16:24:42,313 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,313 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:24:42,316 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,316 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
-2024-02-11 16:24:42,317 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:24:42,319 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,319 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:42,321 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,322 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:42,324 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,326 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:24:42,330 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,331 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:42,351 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:42,352 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:24:46,762 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:46,762 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:24:46,764 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:46,765 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:46,767 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:46,768 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:46,769 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:46,769 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:24:46,770 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:46,770 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:47,150 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,150 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:47,153 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,153 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:24:47,158 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,158 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:24:47,166 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,166 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:47,167 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,167 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:47,499 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:47,500 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:24:47,501 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:47,501 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:47,503 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:47,503 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:47,503 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:47,503 ledfx.effects                  INFO     Effect Lava lamp activated.
-2024-02-11 16:24:47,506 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:24:47,507 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:24:47,891 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,891 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:47,892 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,892 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:24:47,896 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,896 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:24:47,899 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,899 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:24:47,906 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:24:47,907 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:25:06,555 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,555 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:25:06,556 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,556 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:25:06,563 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,564 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:25:06,578 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,579 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:25:06,583 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,583 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:25:06,584 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,584 ledfx.effects                  INFO     Effect Energy 2 activated.
-2024-02-11 16:25:06,585 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,585 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:25:06,585 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:06,585 ledfx.effects                  INFO     Effect BPM Strobe activated.
-2024-02-11 16:25:06,949 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,949 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:06,951 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,951 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:25:06,964 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,964 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:06,966 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,966 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:06,973 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,973 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:25:06,981 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,982 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:25:06,984 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,984 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
-2024-02-11 16:25:06,984 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:06,984 ledfx.effects                  INFO     Effect Lava lamp deactivated.
-2024-02-11 16:25:28,368 ledfx.effects                  INFO     Effect Single Color activated.
-2024-02-11 16:25:28,446 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,446 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:25:28,446 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
-2024-02-11 16:25:28,462 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,462 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:25:28,464 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,464 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:25:28,465 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,466 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:25:28,467 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,468 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:25:28,469 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,469 ledfx.effects                  INFO     Effect Scan and Flare activated.
-2024-02-11 16:25:28,471 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,472 ledfx.effects                  INFO     Effect Magnitude activated.
-2024-02-11 16:25:28,473 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
-2024-02-11 16:25:28,473 ledfx.effects                  INFO     Effect Blade Power+ activated.
-2024-02-11 16:25:28,847 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,848 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:25:28,849 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,849 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:28,851 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,851 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:28,853 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,853 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
-2024-02-11 16:25:28,855 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,855 ledfx.effects                  INFO     Effect Magnitude deactivated.
-2024-02-11 16:25:28,857 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,857 ledfx.effects                  INFO     Effect Energy 2 deactivated.
-2024-02-11 16:25:28,858 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,858 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
-2024-02-11 16:25:28,860 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
-2024-02-11 16:25:28,861 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:25:24,324 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:24,325 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:24,325 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:24,326 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:24,326 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:24,489 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:24,490 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:24,490 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:24,491 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:24,491 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:24,895 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:24,895 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:24,895 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:24,895 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:24,895 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:25,225 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:25,226 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:25,228 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:25,229 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:25,232 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:44,032 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:44,035 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:44,039 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:44,039 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:44,040 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:44,710 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:44,710 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:44,711 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:44,711 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:44,711 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:44,879 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:25:44,880 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:25:44,880 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:25:44,881 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:25:44,881 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:51,972 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:25:53,534 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:26:18,679 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:26:18,679 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:26:18,679 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:26:18,679 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:26:18,680 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:26:24,482 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:26:30,053 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:26:33,524 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:26:36,899 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:27:01,597 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,598 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:27:01,602 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,609 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:27:01,616 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,617 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:27:01,624 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,632 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:27:01,640 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,647 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:27:01,659 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,661 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:27:01,665 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,669 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:27:01,676 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:27:01,683 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:27:02,022 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,022 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:27:02,023 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,023 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:27:02,034 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,034 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:27:02,057 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,057 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:27:02,071 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,071 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:27:02,082 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,082 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:27:02,082 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,083 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:27:02,088 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:27:02,089 ledfx.effects                  INFO     Effect Lava lamp deactivated.
+2024-02-11 20:29:44,485 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:29:44,578 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:29:44,579 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:29:44,580 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:29:44,594 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:29:44,598 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:29:44,606 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:29:44,607 ledfx.effects                  INFO     Effect Bar activated.
+2024-02-11 20:29:44,614 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:29:44,615 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:29:44,632 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:29:44,950 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:29:44,950 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:29:45,006 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:29:45,006 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:29:45,007 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:29:45,007 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:29:45,023 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:29:45,024 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:29:45,453 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:29:45,454 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:29:53,736 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:29:57,613 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:30:06,934 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:30:47,293 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:30:47,398 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:30:47,398 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:30:50,665 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:30:53,409 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:32,404 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:32,404 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:32,405 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:32,405 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:32,406 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:33,363 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:33,363 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:33,364 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:33,364 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:33,364 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:33,566 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:33,566 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:33,566 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:33,566 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:33,566 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:33,735 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:33,736 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:33,736 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:33,736 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:33,736 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:33,954 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:33,956 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:33,957 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:33,957 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:33,958 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:34,346 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:34,346 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:34,346 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:34,346 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:34,347 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:34,828 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:34,829 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:34,829 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:34,830 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:34,830 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:35,117 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:35,118 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:35,119 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:35,120 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:35,121 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:35,588 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:35,594 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:35,594 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:35,596 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:35,596 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:32:42,175 ledfx.effects                  INFO     Effect Gradient deactivated.
+2024-02-11 20:32:42,175 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:32:42,192 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:42,192 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:42,193 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:32:42,215 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:42,220 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:32:42,225 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:42,226 ledfx.effects                  INFO     Effect Bar activated.
+2024-02-11 20:32:42,235 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:42,238 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:32:42,249 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:32:42,553 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:42,553 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:32:42,617 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:42,617 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:32:42,621 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:42,621 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:32:42,621 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:42,622 ledfx.effects                  INFO     Effect Bar deactivated.
+2024-02-11 20:32:42,636 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:42,637 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:32:43,145 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:43,148 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:32:58,835 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,836 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,837 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,838 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,843 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,843 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,850 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,850 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,853 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,853 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,856 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,857 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:58,858 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:32:58,859 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:32:59,242 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,242 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:32:59,243 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,243 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,246 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:32:59,246 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,247 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,247 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:32:59,248 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:32:59,248 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:32:59,257 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,257 ledfx.effects                  INFO     Effect Bar deactivated.
+2024-02-11 20:32:59,267 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:32:59,267 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:34:42,969 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:35:31,476 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,476 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,478 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,478 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,479 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,480 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,481 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,481 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,483 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,483 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,484 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,484 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,485 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:35:31,485 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:35:31,485 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:35:31,873 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,874 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,884 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,884 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,887 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,888 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,889 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,891 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,892 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,893 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,894 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,895 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:35:31,896 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:35:31,897 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:20,910 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:36:21,146 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 20:36:21,146 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:36:21,189 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,190 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,191 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:36:21,207 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,210 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,217 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,218 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,224 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,224 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,228 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,229 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,234 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,239 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,242 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,243 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:21,246 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,247 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:36:21,263 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:36:21,609 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,610 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,615 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,616 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,629 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,629 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,631 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,631 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,638 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,638 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,642 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,642 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:21,649 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:21,649 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:36:21,784 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,785 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:36:21,828 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:21,829 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:22,462 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:22,462 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:33,324 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:36:41,798 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 20:36:41,800 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:41,805 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:36:41,852 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:36:42,624 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 20:36:50,608 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:50,609 ledfx.effects                  INFO     Effect Strobe activated.
+2024-02-11 20:36:50,609 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:36:51,210 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:51,210 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:36:57,420 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:36:57,421 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:36:57,424 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:36:57,991 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:36:57,991 ledfx.effects                  INFO     Effect Strobe deactivated.
+2024-02-11 20:37:00,484 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:37:00,489 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:37:00,490 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:37:01,184 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:37:01,184 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:37:04,772 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:24,426 ledfx.api.virtuals             INFO     Creating virtual with config {'mapping': 'span', 'icon_name': 'mdi:led-strip-variant', 'max_brightness': 1, 'center_offset': 0, 'preview_only': False, 'transition_time': 0.4, 'transition_mode': 'Add', 'frequency_min': 20, 'frequency_max': 15000, 'rows': 1, 'name': 'all'}
+2024-02-11 20:40:24,427 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:28,961 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:28,983 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:28,983 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:28,993 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:44,128 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:51,897 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:40:51,994 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:51,995 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,005 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,005 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,006 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:40:52,021 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,022 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,023 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:40:52,023 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:40:52,023 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,023 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,024 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,024 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,025 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,026 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,027 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,027 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,028 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,029 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,032 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,032 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:40:52,043 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:40:52,278 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:40:52,278 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:40:52,278 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,278 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:40:52,288 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,288 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,381 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:40:52,382 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:40:52,817 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:40:52,817 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:02,608 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:41:45,462 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,463 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,463 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,463 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,483 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,484 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,488 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,489 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,493 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,494 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,494 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,495 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,500 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,501 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,502 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,503 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,513 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,518 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,519 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,520 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,524 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,526 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,526 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,527 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,545 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,546 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,547 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:41:45,548 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:41:45,904 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,905 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,906 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,907 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,907 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,909 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,910 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,912 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,922 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,923 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,936 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,937 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:45,951 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:41:45,952 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:41:51,255 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:41:55,830 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:42:06,684 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:42:06,784 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:06,787 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:06,789 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,789 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,853 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,853 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,853 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:42:06,869 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,869 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,871 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,871 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,872 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,872 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,873 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,874 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,875 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,875 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,876 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,878 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:06,880 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:06,881 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:42:06,882 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:06,883 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:42:06,890 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:42:07,140 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:07,140 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:42:07,140 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:07,140 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:42:07,152 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:07,152 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:07,152 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:07,152 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:07,241 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:07,241 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:07,680 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:07,681 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:17,538 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:42:27,490 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,494 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,495 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,497 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:27,517 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,518 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,518 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,519 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:42:27,524 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,525 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,526 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,526 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:42:27,540 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,541 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,546 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,548 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:42:27,554 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,555 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,555 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,557 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:27,568 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,572 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,575 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,580 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:42:27,594 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,595 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,600 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:27,606 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:42:27,950 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,951 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,954 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,956 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,958 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,958 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,972 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,973 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:27,978 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:27,980 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:28,002 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:28,002 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:28,025 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:28,027 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,415 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,415 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 20:42:47,416 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,416 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 20:42:47,417 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,417 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 20:42:47,419 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,419 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 20:42:47,420 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,420 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 20:42:47,421 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,421 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 20:42:47,423 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,424 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:42:47,425 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,426 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 20:42:47,443 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,443 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,443 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:42:47,444 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 20:42:47,826 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,827 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,829 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,830 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,831 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,831 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,832 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,832 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,832 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:42:47,833 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:42:47,834 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,834 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:42:47,838 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,838 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:42:47,846 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:42:47,846 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:43:01,306 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,307 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:43:01,307 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:43:01,394 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:01,395 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:43:01,396 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:43:01,417 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:01,417 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:43:01,424 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:01,425 ledfx.effects                  INFO     Effect Bar activated.
+2024-02-11 20:43:01,433 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:01,434 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:43:01,450 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 20:43:01,828 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,828 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:43:01,828 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:01,828 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 20:43:01,836 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,836 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 20:43:01,840 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,840 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 20:43:01,849 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,849 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 20:43:01,855 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:01,855 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 20:43:02,308 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:02,309 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:43:02,940 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:02,940 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:43:02,949 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:02,949 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:43:02,952 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:02,953 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:43:02,955 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:02,955 ledfx.effects                  INFO     Effect Lava lamp activated.
+2024-02-11 20:43:02,958 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:43:02,960 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:43:03,386 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:03,386 ledfx.effects                  INFO     Effect Keybeat2d deactivated.
+2024-02-11 20:43:03,393 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:03,393 ledfx.effects                  INFO     Effect Bar deactivated.
+2024-02-11 20:43:03,406 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:03,406 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 20:43:03,412 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:03,412 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:43:03,416 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:43:03,416 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 20:43:43,620 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:43:44,472 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:44:27,006 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,007 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:44:27,009 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:44:27,065 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,065 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:44:27,066 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:44:27,082 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,083 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:44:27,084 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,085 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:44:27,087 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,087 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:44:27,088 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,088 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:44:27,091 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,092 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:44:27,093 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,095 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:44:27,098 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:44:27,098 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:44:27,468 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,468 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:44:27,474 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,474 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 20:44:27,476 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,476 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 20:44:27,476 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,476 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 20:44:27,477 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,477 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:44:27,482 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,482 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:44:27,483 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,483 ledfx.effects                  INFO     Effect Lava lamp deactivated.
+2024-02-11 20:44:27,491 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:44:27,491 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 20:51:25,550 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:25,551 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:51:25,554 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:25,558 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:51:25,569 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:25,570 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:51:25,577 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:25,580 ledfx.effects                  INFO     Effect Lava lamp activated.
+2024-02-11 20:51:25,591 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:25,594 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:51:25,975 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:25,975 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:25,984 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:25,984 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:25,995 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:25,995 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:26,002 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:26,003 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:51:26,041 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:26,042 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:51:26,679 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 20:51:26,679 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:51:26,727 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,727 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:51:26,732 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:51:26,743 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,745 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:51:26,751 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,757 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:51:26,770 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,773 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:51:26,784 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,785 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:51:26,797 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,799 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:51:26,807 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,810 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:51:26,818 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:26,821 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:51:27,160 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,160 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:27,189 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,190 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:27,201 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,202 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:27,214 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,215 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:27,217 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,230 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:51:27,236 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,237 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:27,238 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,247 ledfx.effects                  INFO     Effect Lava lamp deactivated.
+2024-02-11 20:51:27,278 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:27,279 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:51:36,708 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,709 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:51:36,713 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,714 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:51:36,715 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,715 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:51:36,745 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,747 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:51:36,749 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,750 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 20:51:36,752 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,753 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:51:36,757 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:51:36,759 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:51:37,136 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,138 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:37,158 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,159 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:37,171 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,171 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:37,175 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,177 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,178 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:51:37,182 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:37,202 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,202 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 20:51:37,219 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:51:37,219 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 20:54:34,345 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
+2024-02-11 20:54:34,346 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
+2024-02-11 20:54:34,346 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
+2024-02-11 20:54:34,362 ledfx.sentry_config            INFO     Sentry Configuration:
+2024-02-11 20:54:34,363 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
+2024-02-11 20:54:34,363 ledfx.sentry_config            INFO     Sample rate: 1
+2024-02-11 20:54:34,363 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
+2024-02-11 20:54:34,372 ledfx.__main__                 INFO     LedFx Core is initializing
+2024-02-11 20:54:34,374 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
+2024-02-11 20:54:34,377 ledfx.core                     INFO     Using uvloop for asyncio loop
+2024-02-11 20:54:34,430 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
+2024-02-11 20:54:34,474 ledfx.devices                  INFO     Loading device from config: {'config': {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.2.205', 'name': 'WLED-SoundReactive', 'pixel_count': 2019, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}, 'id': 'wled', 'type': 'wled'}
+2024-02-11 20:54:34,475 ledfx.devices                  INFO     Device WLED-SoundReactive: Resolved destination to 192.168.2.205
+2024-02-11 20:54:34,475 ledfx.utils                    INFO     WLED 192.168.2.205: Attempting to contact device...
+2024-02-11 20:54:34,979 ledfx.devices                  WARNING  WLED 192.168.2.205: Failed to connect
+2024-02-11 20:54:34,983 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:34,984 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:34,992 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-11 20:54:34,999 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,000 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,001 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:54:35,011 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-11 20:54:35,016 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,017 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,019 ledfx.virtuals                 ERROR    Invalid segment pixels: (1798, 2040). Device 'big_arrow' valid pixels between (0, -1)
+2024-02-11 20:54:35,076 ledfx.virtuals                 WARNING  Virtual Segment Changed. Not restoring segment
+2024-02-11 20:54:35,078 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,078 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,079 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,080 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,082 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,082 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,084 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,084 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:54:35,087 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:54:35,087 ledfx.effects                  INFO     Effect Lava lamp activated.
+2024-02-11 20:54:35,088 ledfx.virtuals                 ERROR    Invalid segment pixels: (1983, 2040). Device 'all_small_arrows' valid pixels between (0, -1)
+2024-02-11 20:54:35,091 ledfx.virtuals                 WARNING  Virtual Segment Changed. Not restoring segment
+2024-02-11 20:54:35,091 ledfx.virtuals                 ERROR    Invalid segment pixels: (1983, 2040). Device 'small_arrow_in_big_arrow' valid pixels between (0, -1)
+2024-02-11 20:54:35,093 ledfx.virtuals                 WARNING  Virtual Segment Changed. Not restoring segment
+2024-02-11 20:54:35,093 ledfx.virtuals                 ERROR    Invalid segment pixels: (0, 2040). Device 'all' valid pixels between (0, -1)
+2024-02-11 20:54:35,095 ledfx.virtuals                 WARNING  Virtual Segment Changed. Not restoring segment
+2024-02-11 20:54:36,018 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-11 20:54:36,019 ledfx.api.websocket            INFO     Starting sender
+2024-02-11 20:54:36,025 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-11 20:54:36,027 ledfx.api.websocket            INFO     Starting sender
+2024-02-11 20:56:35,789 ledfx.devices                  INFO     Device WLED-SoundReactive config updated to {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.2.99', 'name': 'WLED-SoundReactive', 'pixel_count': 2019, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}.
+2024-02-11 20:56:35,793 ledfx.config                   INFO     Saving configuration file to /home/ledfx/.ledfx
+2024-02-11 20:56:43,590 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-11 20:56:43,593 ledfx.api.websocket            INFO     Stopping sender
+2024-02-11 20:56:43,594 ledfx.api.websocket            INFO     Closed connection
+2024-02-11 20:56:43,744 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-11 20:56:43,744 ledfx.api.websocket            INFO     Starting sender
+2024-02-11 20:56:44,870 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:56:44,871 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:56:44,876 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:56:44,877 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 20:56:44,884 ledfx.virtuals                 WARNING  Virtual big-arrow: Cannot activate, no configured device segments
+2024-02-11 20:56:45,271 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:56:45,271 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:56:45,278 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:56:45,279 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:11,560 ledfx.utils                    INFO     Optional dependency 'psutil' installed.
+2024-02-11 20:57:11,561 ledfx.utils                    INFO     Optional dependency 'python-mbedtls' not installed.
+2024-02-11 20:57:11,561 ledfx.__main__                 INFO     Unable to set priority, please run as root or sudo if you are experiencing frame rate issues
+2024-02-11 20:57:11,576 ledfx.sentry_config            INFO     Sentry Configuration:
+2024-02-11 20:57:11,577 ledfx.sentry_config            INFO     DSN (first ten): b192934eeb
+2024-02-11 20:57:11,577 ledfx.sentry_config            INFO     Sample rate: 1
+2024-02-11 20:57:11,577 ledfx.sentry_config            INFO     LedFx release: ledfx@2.0.91-
+2024-02-11 20:57:11,585 ledfx.__main__                 INFO     LedFx Core is initializing
+2024-02-11 20:57:11,587 ledfx.config                   INFO     LedFx Configuration Version: 2.3.0
+2024-02-11 20:57:11,589 ledfx.core                     INFO     Using uvloop for asyncio loop
+2024-02-11 20:57:11,646 ledfx.core                     INFO     Starting LedFx, listening on 0.0.0.0:8888
+2024-02-11 20:57:11,689 ledfx.devices                  INFO     Loading device from config: {'config': {'center_offset': 0, 'create_segments': False, 'icon_name': 'wled', 'ip_address': '192.168.2.99', 'name': 'WLED-SoundReactive', 'pixel_count': 2019, 'refresh_rate': 62, 'rgbw_led': False, 'sync_mode': 'DDP', 'timeout': 1}, 'id': 'wled', 'type': 'wled'}
+2024-02-11 20:57:11,689 ledfx.devices                  INFO     Device WLED-SoundReactive: Resolved destination to 192.168.2.99
+2024-02-11 20:57:11,690 ledfx.utils                    INFO     WLED 192.168.2.99: Attempting to contact device...
+2024-02-11 20:57:11,716 ledfx.utils                    INFO     WLED 192.168.2.99: Received config
+2024-02-11 20:57:11,716 ledfx.devices.wled             INFO     WLED Build Supports Sync Setting API: 2310130
+2024-02-11 20:57:11,873 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,874 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,886 ledfx.effects.audio            INFO     Audio source opened: ALSA: pulse
+2024-02-11 20:57:11,895 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,896 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,898 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:57:11,906 ledfx.effects.audio            WARNING  Discarded malformed audio frame - 481 samples, expected 500
+2024-02-11 20:57:11,912 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,913 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,921 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,922 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,925 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,926 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,929 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,931 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,934 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,934 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,937 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,937 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:11,939 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,940 ledfx.effects                  INFO     Effect Lava lamp activated.
+2024-02-11 20:57:11,958 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,958 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:57:11,983 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:11,983 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:57:12,002 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:12,002 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 20:57:13,017 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-11 20:57:13,018 ledfx.api.websocket            INFO     Starting sender
+2024-02-11 20:57:14,370 ledfx.api.websocket            INFO     Websocket connected.
+2024-02-11 20:57:14,371 ledfx.api.websocket            INFO     Starting sender
+2024-02-11 20:57:23,951 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 20:57:23,958 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:23,958 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:57:23,959 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 20:57:23,976 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:23,977 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:57:23,983 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:23,984 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:57:23,990 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:23,991 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:57:23,998 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:24,004 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:57:24,012 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:24,014 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 20:57:24,031 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:24,033 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 20:57:24,042 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 20:57:24,043 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 20:57:24,402 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,403 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:24,410 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,414 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:24,424 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,425 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:24,428 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,429 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:24,447 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,448 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 20:57:24,461 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,461 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 20:57:24,485 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,486 ledfx.effects                  INFO     Effect Lava lamp deactivated.
+2024-02-11 20:57:24,493 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 20:57:24,499 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:00:51,179 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,180 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:00:51,182 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,184 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:51,187 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,188 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:00:51,208 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,209 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:51,211 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,212 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:51,214 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,224 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:00:51,227 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:51,228 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 21:00:51,587 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,588 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:00:51,594 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,597 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:00:51,607 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,607 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:00:51,611 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,611 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:00:51,619 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,619 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:00:51,632 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,632 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:00:51,660 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:51,661 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 21:00:56,272 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,273 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:00:56,277 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,280 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:00:56,284 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,292 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:00:56,296 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,300 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:00:56,307 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,314 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:00:56,332 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,334 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:56,338 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,347 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:00:56,368 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:56,369 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:00:56,680 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,681 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:00:56,693 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,694 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:00:56,718 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,718 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:00:56,737 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,738 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,738 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:00:56,739 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:00:56,776 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,776 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,777 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:00:56,777 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 21:00:56,782 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:00:56,783 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:00:59,754 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:59,755 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:59,756 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:59,758 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:59,760 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:59,760 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:00:59,761 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:59,762 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:00:59,766 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:00:59,766 ledfx.effects                  INFO     Effect PlasmaWled2d activated.
+2024-02-11 21:01:00,183 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:00,184 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:01:00,186 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:00,187 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:01:00,192 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:00,194 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:01:00,208 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:00,208 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 21:01:00,210 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:00,211 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:01:21,030 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,033 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:01:21,036 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,038 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:01:21,063 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,064 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:01:21,070 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,073 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:01:21,083 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,091 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:01:21,093 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,094 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:01:21,099 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,105 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:01:21,107 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:21,108 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:01:21,455 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,457 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:21,465 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,466 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:21,490 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,492 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:21,496 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,496 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:01:21,516 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,516 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:01:21,519 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,520 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:21,534 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,534 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:01:21,543 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:21,544 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:01:22,362 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,362 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:22,364 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 21:01:22,416 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,417 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:01:22,418 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 21:01:22,435 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,436 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:01:22,447 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,448 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:01:22,455 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,457 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:01:22,472 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,473 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:01:22,480 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,481 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 21:01:22,487 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,491 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:01:22,497 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:01:22,499 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:01:22,851 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,851 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:22,874 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,874 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:22,875 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,876 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:22,877 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,881 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:01:22,896 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,897 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:01:22,898 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,898 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:01:22,909 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,909 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:01:22,916 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:01:22,917 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:02:32,210 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,210 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 21:02:32,211 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,212 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 21:02:32,214 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,215 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 21:02:32,216 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,218 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 21:02:32,221 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,224 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 21:02:32,226 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,227 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 21:02:32,230 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,231 ledfx.effects                  INFO     Effect Rain activated.
+2024-02-11 21:02:32,235 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:32,235 ledfx.effects                  INFO     Effect Scroll activated.
+2024-02-11 21:02:32,654 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,658 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,658 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,659 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:02:32,664 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:02:32,670 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:02:32,679 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,680 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,686 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,695 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:02:32,698 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:02:32,700 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:02:32,707 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,712 ledfx.effects                  INFO     Effect Magnitude deactivated.
+2024-02-11 21:02:32,742 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:32,744 ledfx.effects                  INFO     Effect Scan and Flare deactivated.
+2024-02-11 21:02:58,157 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,157 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:02:58,159 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,159 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 21:02:58,160 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,160 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:02:58,165 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,165 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 21:02:58,166 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,167 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:02:58,168 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,168 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 21:02:58,169 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:02:58,169 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:02:58,594 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,598 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,598 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 21:02:58,601 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 21:02:58,605 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,607 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,612 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 21:02:58,618 ledfx.effects                  INFO     Effect Blade Power+ deactivated.
+2024-02-11 21:02:58,629 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,631 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 21:02:58,660 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,663 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 21:02:58,705 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:02:58,707 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 21:03:30,471 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 21:03:30,473 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 21:03:30,538 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:30,539 ledfx.effects                  INFO     Effect BPM Strobe activated.
+2024-02-11 21:03:30,540 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 21:03:30,557 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:30,567 ledfx.effects                  INFO     Effect Scan activated.
+2024-02-11 21:03:30,572 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:30,573 ledfx.effects                  INFO     Effect Bar activated.
+2024-02-11 21:03:30,578 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:30,582 ledfx.effects                  INFO     Effect Energy 2 activated.
+2024-02-11 21:03:30,595 ledfx.utils                    INFO     Attempting to open GIF: https://i.ibb.co/yRRKLvq/loading2.gif
+2024-02-11 21:03:30,860 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:30,860 ledfx.effects                  INFO     Effect Keybeat2d activated.
+2024-02-11 21:03:30,962 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:30,962 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:03:30,976 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:30,976 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 21:03:30,985 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:30,986 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:03:30,986 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:30,986 ledfx.effects                  INFO     Effect Rain deactivated.
+2024-02-11 21:03:31,331 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:31,332 ledfx.effects                  INFO     Effect PlasmaWled2d deactivated.
+2024-02-11 21:03:33,628 ledfx.effects                  INFO     Effect Single Color deactivated.
+2024-02-11 21:03:33,631 ledfx.effects                  INFO     Effect Single Color activated.
+2024-02-11 21:03:33,681 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,682 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:03:33,683 ledfx.devices                  WARNING  Flush skipped as wled has no priority_virtual
+2024-02-11 21:03:33,699 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,700 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:03:33,704 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,705 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:03:33,710 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,711 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:03:33,720 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,721 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:03:33,726 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,727 ledfx.effects                  INFO     Effect Scan and Flare activated.
+2024-02-11 21:03:33,731 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,732 ledfx.effects                  INFO     Effect Magnitude activated.
+2024-02-11 21:03:33,748 ledfx.effects.audio            INFO     Activating AudioReactiveEffect.
+2024-02-11 21:03:33,749 ledfx.effects                  INFO     Effect Blade Power+ activated.
+2024-02-11 21:03:34,109 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,109 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:03:34,111 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,111 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 21:03:34,125 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,125 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 21:03:34,126 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,126 ledfx.effects                  INFO     Effect BPM Strobe deactivated.
+2024-02-11 21:03:34,136 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,136 ledfx.effects                  INFO     Effect Scan deactivated.
+2024-02-11 21:03:34,144 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,144 ledfx.effects                  INFO     Effect Bar deactivated.
+2024-02-11 21:03:34,148 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,148 ledfx.effects                  INFO     Effect Scroll deactivated.
+2024-02-11 21:03:34,149 ledfx.effects.audio            INFO     Deactivating AudioReactiveEffect.
+2024-02-11 21:03:34,149 ledfx.effects                  INFO     Effect Energy 2 deactivated.
+2024-02-11 21:11:14,823 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-11 21:11:14,824 ledfx.api.websocket            INFO     Stopping sender
+2024-02-11 21:11:14,824 ledfx.api.websocket            INFO     Closed connection
+2024-02-11 21:11:14,843 ledfx.api.websocket            INFO     Connection closed by client.
+2024-02-11 21:11:14,843 ledfx.api.websocket            INFO     Stopping sender
+2024-02-11 21:11:14,844 ledfx.api.websocket            INFO     Closed connection

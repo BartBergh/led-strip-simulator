@@ -12,8 +12,9 @@ const App: React.FC = () => {
   const [ledBarLength, setLedBarLength] = useState('');  // Length in meters
   const [ledsPerMeter, setLedsPerMeter] = useState('');  // LEDs per meter
   const [scale, setScale] = useState('');  // Scale in pixels per meter
-  const [, setWebSocketService] = useState<WebSocketService | null>(null);
-  const WEBSOCKET_URL = 'ws://192.168.0.123/ws';
+  const [, setWebSocketService] = useState<WebSocketService[] | null>(null);
+  const WEBSOCKET_URL1 = 'ws://192.168.0.123/ws';
+  const WEBSOCKET_URL2 = 'ws://192.168.0.124/ws';
 
   // Function to add a new LedBar
   const addLedBar = () => {
@@ -38,27 +39,33 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const webSocketService = new WebSocketService(WEBSOCKET_URL, updateLedDisplay);
+    const webSocketService1 = new WebSocketService(WEBSOCKET_URL1, updateLedDisplay, -1);
+    const webSocketService2 = new WebSocketService(WEBSOCKET_URL2, updateLedDisplay, -2);
 
-    webSocketService.connect();
+    webSocketService1.connect();
+    webSocketService2.connect();
 
-    if (isLightsOn && !webSocketService) {
-      const newWebSocketService = new WebSocketService(WEBSOCKET_URL, updateLedDisplay);
-      newWebSocketService.connect();
-      setWebSocketService(newWebSocketService);
-    } else if (!isLightsOn && webSocketService) {
-      webSocketService.disconnect();
+    if (isLightsOn && !webSocketService1 && !webSocketService2) {
+      const newWebSocketService1 = new WebSocketService(WEBSOCKET_URL1, updateLedDisplay);
+      const newWebSocketService2 = new WebSocketService(WEBSOCKET_URL2, updateLedDisplay);
+      newWebSocketService1.connect();
+      newWebSocketService2.connect();
+      setWebSocketService([newWebSocketService1, newWebSocketService2]);
+    } else if (!isLightsOn && webSocketService1) {
+      webSocketService1.disconnect();
+      webSocketService2.disconnect();
       setWebSocketService(null); // Clear the WebSocket service instance
     }
 
     return () => {
-      webSocketService.disconnect();
+      webSocketService1.disconnect();
+      webSocketService2.disconnect();
     };
   }, [isLightsOn]);
 
-  function updateLedDisplay(ledData: number[]): void {
+  function updateLedDisplay(ledData: number[], id:number): void {
     // Update your PixiJS visualization with the new LED data
-    applyColors(ledData);
+    applyColors(ledData, id);
    }
 
   interface LedBarData {

@@ -1,9 +1,11 @@
 // websocketService.js
 class WebSocketService {
-    constructor(url, onLedDataReceived) {
+    constructor(url, onLedDataReceived, id) {
       this.url = url;
       this.onLedDataReceived = onLedDataReceived;
       this.ws = null;
+      this.id = id;
+      this.amountOfLeds = null;
     }
   
     connect() {
@@ -22,7 +24,7 @@ class WebSocketService {
               // The reader.result contains the contents of the blob as a typed array
               const arrayBuffer = reader.result;
               const ledData = this.parseLedData(new Uint8Array(arrayBuffer));
-              this.onLedDataReceived(ledData);
+              this.onLedDataReceived(ledData, this.id);
             };
             reader.onerror = (e) => {
               console.error('FileReader error:', e);
@@ -30,6 +32,11 @@ class WebSocketService {
             reader.readAsArrayBuffer(event.data);
           } else {
             console.log('WebSocket Message Received:', event.data);
+            const data = JSON.parse(event.data);
+            if (data.info) {
+              this.amountOfLeds = data.info.leds.count;
+              console.log('Amount of leds:', this.amountOfLeds);
+            }
           }
         
       };
@@ -51,7 +58,9 @@ class WebSocketService {
             let hexValue = hexStringWithoutHeader.substr(i, 6);
             hexValue = parseInt(hexValue, 16)
             hexValues.push(hexValue);
-            hexValues.push(hexValue);
+            if (this.amountOfLeds > 1024) {
+              hexValues.push(hexValue); // wled halves the data if it's too long, so we need to double it, we lose resolution but it's better than nothing
+            }    
         }
         return hexValues;
     }

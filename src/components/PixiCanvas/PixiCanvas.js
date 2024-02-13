@@ -7,7 +7,8 @@ let activeDragItem = null;
 let dragTarget = null;
 let isCableEditing = false;
 let activeCable = null
-let powerSource = null;
+let powerSource1 = null;
+let powerSource2 = null;
 // This could be in a constants.js file or similar
 
 const LEDS_PER_METER = 58;  // 1 meter = 200 pixels
@@ -54,25 +55,6 @@ function addPicture(imagePath) {
     app.current.stage.addChild(sprite);
 }
 
-function toggleBrightness(app, brightness = 0.1) {
-    // Assuming there's a global variable to keep track of the current brightness state
-    if (!app.current.brightnessState || app.current.brightnessState === 1) {
-        app.current.stage.children.forEach(child => {
-            child.filters = [new PIXI.filters.ColorMatrixFilter()];
-            child.filters[0].brightness(brightness, false);
-        });
-        app.current.brightnessState = brightness;
-    } else {
-        app.current.stage.children.forEach(child => {
-            if (child.filters && child.filters.length > 0) {
-                child.filters[0].brightness(1, false); // Reset brightness
-            }
-        });
-        app.current.brightnessState = 1;
-    }
-}
-
-
 function saveLayout() {
     let ledBarConfigs = [];
     for (const [, value] of Object.entries(inventoryManager.ledBars)) {
@@ -81,13 +63,13 @@ function saveLayout() {
     return ledBarConfigs;
 }
 
-function applyColors(colors) {
-    globalLedManager.applyColors(colors);
+function applyColors(colors, id) {
+    const powerSource = inventoryManager.powersources.find(p => p.id === id);
+    globalLedManager.applyColors(powerSource, colors);
 }
 
 function loadLayout(ledBarConfigs) {
     ledBarConfigs.forEach(ledBarData => {
-        console.log(ledBarData);
         let ledbar = new LedBar(ledBarData.startPoint.coord, ledBarData.endPoint.coord, ledBarData.ledsPerMeter, ledBarData.id);
         inventoryManager.registerLedBar(ledbar);
     });
@@ -114,7 +96,9 @@ function loadLayout(ledBarConfigs) {
 
     ledBarConfigs.forEach(ledBarData => {
         const ledbar = inventoryManager.getLedBarById(ledBarData.id);
+        console.log('ledbar ', ledBarData);
         if (ledBarData.startPoint.cable !== null && ledBarData.startPoint.cable.startHandle === ledBarData.startPoint.id){
+            console.log('handles', inventoryManager.handles);
             ledbar.startPoint.cable = new Cable(inventoryManager.getHandleById(ledBarData.startPoint.cable.startHandle), inventoryManager.getHandleById(ledBarData.startPoint.cable.endHandle));
             inventoryManager.registerCable(ledbar.startPoint.cable);
         }
@@ -127,11 +111,12 @@ function loadLayout(ledBarConfigs) {
 
 // powersource is a small square with 1 unmovable handle. it will store the ledbarid of the connected ledbar (if any)
 class PowerSource {
-    constructor(coord) {
+    constructor(coord, id=-1, color=0xFFFF00) {
         this.coord = coord; // { x: number, y: number }
-        this.id = -1;
-        this.handle = new Handle(coord, -1, 0xFFFF00, -1, true); // { x: number, y: number }
+        this.id = id;
+        this.handle = new Handle(coord, this.id, color, this.id, true);
         inventoryManager.registerHandle(this.handle);
+        console.log(inventoryManager.handles);
     }
 
     updatePosition(newCoord) {
@@ -153,9 +138,10 @@ class InventoryManager {
     constructor() {
         this.ledBars = {};
         this.handles = {};
-        this.connections = [];
+        this.connections = {};
         this.cables = [];
         this.popups = [];
+        this.powersources = [];
         this.nextId = 0;
     }
 
@@ -168,6 +154,10 @@ class InventoryManager {
 
     registerHandle(handle) {
         this.handles[handle.id] = handle;
+    }
+
+    registerPowerSource(powerSource) {
+        this.powersources.push(powerSource);
     }
 
     registerPopup(popup) {
@@ -215,12 +205,12 @@ class InventoryManager {
     }
 
     // recursive function to return a list of all connected ledbars in order. we return a list of [ledbarid, isstartpoint]. a handle has a sibling on the other side of the ledbar. we can use this to traverse the ledbars
-    addLinkedLedBars(startHandle) {
+    addLinkedLedBars(powerSource, startHandle) {
         if(startHandle && startHandle.linkedHandle !== null){
             let startLedBarId = startHandle.ledBarId;
-            this.connections.push([startLedBarId, startHandle.isStartPoint]);
+            this.connections[powerSource.id].push([startLedBarId, startHandle.isStartPoint]);
             let nextHandle = startHandle.sibling.linkedHandle;
-            this.addLinkedLedBars(nextHandle)
+            this.addLinkedLedBars(powerSource, nextHandle)
         }
     }
 
@@ -234,19 +224,18 @@ class InventoryManager {
             value.ledBar.ledColors = colors;
             value.ledBar.updatePosition();
         }
-
     }
-
-    reassignIds() {
+    // parameter id, default null
+    reassignIds(powerSource) {
         if(powerSource.handle.linkedHandle !== null){
-            this.connections = [];
-            this.addLinkedLedBars(powerSource.handle.linkedHandle);
-            globalLedManager.reassignIds();
+            this.connections[powerSource.id] = [];
+            this.addLinkedLedBars(powerSource, powerSource.handle.linkedHandle);
+            globalLedManager.reassignIds(powerSource);
         }
         if (powerSource.handle.linkedHandle === null){
-            globalLedManager.resetAllLedIds();
-            this.connections = [];
-            globalLedManager.reassignIds();
+            globalLedManager.resetAllLedIds(powerSource.id);
+            this.connections[powerSource.id] = [];
+            globalLedManager.reassignIds(powerSource);
         }
     }
 
@@ -268,7 +257,7 @@ class InventoryManager {
 class GlobalLedManager {
     constructor() {
         this.leds = [];
-        this.orderedLeds = [];
+        this.orderedLeds = {};
     }
 
     // Register an LED and assign it a unique ID
@@ -277,7 +266,6 @@ class GlobalLedManager {
         this.leds.push(led);
     }
 
-    // Update all LED IDs to be sequential across all bars
     resetAllLedIds() {
         this.leds.forEach(led => {
             led.id = Math.random().toString(36).substring(7);
@@ -285,23 +273,22 @@ class GlobalLedManager {
     }
 
     // Apply a given list of colors to ordered LEDs
-    applyColors(colors) {
+    applyColors(powerSource, colors) {
         colors.forEach((color, index) => {
-            if (index < this.orderedLeds.length) {
-                this.orderedLeds[index].setLedColor(color);
-                // this.orderedLeds[index].color = color;
+            if (this.orderedLeds[powerSource.id]){
+                if (index < this.orderedLeds[powerSource.id].length) {
+                    this.orderedLeds[powerSource.id][index].setLedColor(color);
+                }
             }
         });
-        // inventoryManager.updateAllLedBars();
     }
         
-
     // This method can be called when a new bar is created or when bars are reconnected
-    reassignIds() {
-        this.orderedLeds = [];
-        for (let i = 0; i < inventoryManager.connections.length; i++) {
-            const ledBarId = inventoryManager.connections[i][0];
-            const isStartPoint = inventoryManager.connections[i][1];
+    reassignIds(powerSource) {
+        this.orderedLeds[powerSource.id] = [];
+        for (let i = 0; i < inventoryManager.connections[powerSource.id].length; i++) {
+            const ledBarId = inventoryManager.connections[powerSource.id][i][0];
+            const isStartPoint = inventoryManager.connections[powerSource.id][i][1];
             const ledBar = inventoryManager.getLedBarById(ledBarId);
             if (ledBar) {
                 let ledBarLeds = [...ledBar.leds];
@@ -311,7 +298,7 @@ class GlobalLedManager {
                 for (let j = 0; j < ledBarLeds.length; j++) {
                     const led = ledBarLeds[j];
                     led.id = j;
-                    this.orderedLeds.push(led);
+                    this.orderedLeds[powerSource.id].push(led);
                 }
             }
         }
@@ -677,7 +664,7 @@ class Handle {
         let linkedHandle = null;
         if (this.linkedHandle){
             linkedHandle = this.linkedHandle.id;
-            if(linkedHandle === -1){
+            if(linkedHandle < 0){
                 linkedHandle = null;
             }
         }
@@ -797,14 +784,14 @@ class Cable {
 
 
     drawArrow(start, end, cp1, cp2) {
+        // Arrow properties
+        const arrowLength = 10;
+    
         // Calculate midpoint for the arrow
         const t = 0.5; // Midpoint of the curve
         const mt = 1 - t;
         const x = mt * mt * mt * start.x + 3 * mt * mt * t * cp1.x + 3 * mt * t * t * cp2.x + t * t * t * end.x;
         const y = mt * mt * mt * start.y + 3 * mt * mt * t * cp1.y + 3 * mt * t * t * cp2.y + t * t * t * end.y;
-    
-        // Arrow properties
-        const arrowLength = 10;
     
         // Calculate the angle of the line
         const angle = Math.atan2(end.y - start.y, end.x - start.x);
@@ -824,7 +811,7 @@ class Cable {
         const distance = Math.sqrt(dx * dx + dy * dy);
     
         // Adjust these values to change the curvature and loop size
-        const curveDepth = 50;
+        const curveDepth = 0;
         const loopTrigger = 0;
         const loopRadius = 170;
     
@@ -917,7 +904,9 @@ class Cable {
         }
 
         inventoryManager.deleteCable(this);
-        inventoryManager.reassignIds();    
+        for (const [, powerSource] of Object.entries(inventoryManager.powersources)) {
+            inventoryManager.reassignIds(powerSource);
+        }    
         
     }
 
@@ -1013,7 +1002,10 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
             pixiContainer.current.appendChild(app.current.view);
             init();
 
-            powerSource = new PowerSource({ x: 10, y: 10 });
+            powerSource1 = new PowerSource({ x: 10, y: 10 }, -1, 0xFFFF00);
+            powerSource2 = new PowerSource({ x: 20, y: 10 }, -2, 0xFF00FF);
+            inventoryManager.registerPowerSource(powerSource1);
+            inventoryManager.registerPowerSource(powerSource2);
 
             // Handle window resize
             window.addEventListener('resize', () => {
@@ -1052,29 +1044,34 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
     }, [isCableEditingMode]);
 
     useEffect(() => {
-        if (powerSource.handle.linkedHandle !== null){
-            inventoryManager.reassignIds();
-        }
-        if (isLightsOn){
-            app.current.renderer.backgroundColor = 0x050505;
-            // go over each value of the handles. this is an object in inventoryManager.handles
+        // for each powerSource
+        for (const [, powerSource] of Object.entries(inventoryManager.powersources)) {
+            if (powerSource.handle.linkedHandle !== null){
+                inventoryManager.reassignIds(powerSource);
+            }
+            if (isLightsOn){
+                app.current.renderer.backgroundColor = 0x050505;
+                // go over each value of the handles. this is an object in inventoryManager.handles
 
-            for (const [, value] of Object.entries(inventoryManager.handles)) {
-                value.point.alpha = 0.1;
-            }
-            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
-                value.ledBar.diffuser.children[0].alpha = 0;
-            }
+                for (const [, value] of Object.entries(inventoryManager.handles)) {
+                    if (value.id > 0){ // if the handle is not a powerSource
+                        value.point.alpha = 0.1; 
+                    }
+                }
+                for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                    value.ledBar.diffuser.children[0].alpha = 0;
+                }
 
-        } else {
-            app.current.renderer.backgroundColor = 0x333333;
-            for (const [, value] of Object.entries(inventoryManager.handles)) {
-                value.point.alpha = 1;
+            } else {
+                app.current.renderer.backgroundColor = 0x333333;
+                for (const [, value] of Object.entries(inventoryManager.handles)) {
+                    value.point.alpha = 1;
+                }
+                for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                    value.ledBar.diffuser.children[0].alpha = 1;
+                }
+                
             }
-            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
-                value.ledBar.diffuser.children[0].alpha = 1;
-            }
-            
         }
         
     }, [isLightsOn]);

@@ -1,0 +1,462 @@
+[
+  {
+    "id": 2,
+    "startPoint": {
+      "coord": {
+        "x": 1207,
+        "y": 360
+      },
+      "ledBarId": 2,
+      "id": 2,
+      "isStartPoint": true,
+      "sibling": 3,
+      "linkedHandle": 7,
+      "cable": {
+        "startHandle": 7,
+        "endHandle": 2,
+        "id": "aa7m3req5"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1607,
+        "y": 360
+      },
+      "ledBarId": 2,
+      "id": 3,
+      "isStartPoint": false,
+      "sibling": 2,
+      "linkedHandle": 20,
+      "cable": {
+        "startHandle": 3,
+        "endHandle": 20,
+        "id": "ec2b3cno4"
+      }
+    },
+    "ledsPerMeter": "60.25"
+  },
+  {
+    "id": 3,
+    "startPoint": {
+      "coord": {
+        "x": 1610,
+        "y": 524
+      },
+      "ledBarId": 3,
+      "id": 4,
+      "isStartPoint": true,
+      "sibling": 5,
+      "linkedHandle": 27,
+      "cable": {
+        "startHandle": 27,
+        "endHandle": 4,
+        "id": "4zrk0lbyp"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1210,
+        "y": 524
+      },
+      "ledBarId": 3,
+      "id": 5,
+      "isStartPoint": false,
+      "sibling": 4,
+      "linkedHandle": 12,
+      "cable": {
+        "startHandle": 5,
+        "endHandle": 12,
+        "id": "z3aqx7bxc"
+      }
+    },
+    "ledsPerMeter": "60.25"
+  },
+  {
+    "id": 4,
+    "startPoint": {
+      "coord": {
+        "x": 1608,
+        "y": 231
+      },
+      "ledBarId": 4,
+      "id": 6,
+      "isStartPoint": true,
+      "sibling": 7,
+      "linkedHandle": null,
+      "cable": {
+        "startHandle": -2,
+        "endHandle": 6,
+        "id": "v4cuexuke"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1208,
+        "y": 231
+      },
+      "ledBarId": 4,
+      "id": 7,
+      "isStartPoint": false,
+      "sibling": 6,
+      "linkedHandle": 2,
+      "cable": {
+        "startHandle": 7,
+        "endHandle": 2,
+        "id": "aa7m3req5"
+      }
+    },
+    "ledsPerMeter": "60.25"
+  },
+  {
+    "id": 5,
+    "startPoint": {
+      "coord": {
+        "x": 1661.5786437626905,
+        "y": 139.5786437626905
+      },
+      "ledBarId": 5,
+      "id": 8,
+      "isStartPoint": true,
+      "sibling": 9,
+      "linkedHandle": null,
+      "cable": null
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1944.4213562373097,
+        "y": 422.4213562373095
+      },
+      "ledBarId": 5,
+      "id": 9,
+      "isStartPoint": false,
+      "sibling": 8,
+      "linkedHandle": 15,
+      "cable": {
+        "startHandle": 15,
+        "endHandle": 9,
+        "id": "r9vf3aijc"
+      }
+    },
+    "ledsPerMeter": "60.75"
+  },
+  {
+    "id": 6,
+    "startPoint": {
+      "coord": {
+        "x": 1945.4213562373097,
+        "y": 454.5786437626904
+      },
+      "ledBarId": 6,
+      "id": 10,
+      "isStartPoint": true,
+      "sibling": 11,
+      "linkedHandle": 22,
+      "cable": {
+        "startHandle": 10,
+        "endHandle": 22,
+        "id": "9lr28xcde"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1662.5786437626905,
+        "y": 737.4213562373095
+      },
+      "ledBarId": 6,
+      "id": 11,
+      "isStartPoint": false,
+      "sibling": 10,
+      "linkedHandle": 17,
+      "cable": {
+        "startHandle": 17,
+        "endHandle": 11,
+        "id": "rf5xacnlx"
+      }
+    },
+    "ledsPerMeter": "60.5"
+  },
+  {
+    "id": 7,
+    "startPoint": {
+      "coord": {
+        "x": 1210,
+        "y": 648
+      },
+      "ledBarId": 7,
+      "id": 12,
+      "isStartPoint": true,
+      "sibling": 13,
+      "linkedHandle": 5,
+      "cable": {
+        "startHandle": 5,
+        "endHandle": 12,
+        "id": "z3aqx7bxc"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1610.0000000000002,
+        "y": 648
+      },
+      "ledBarId": 7,
+      "id": 13,
+      "isStartPoint": false,
+      "sibling": 12,
+      "linkedHandle": null,
+      "cable": null
+    },
+    "ledsPerMeter": "60.25"
+  },
+  {
+    "id": 8,
+    "startPoint": {
+      "coord": {
+        "x": 1799.6446609406726,
+        "y": 353.6446609406727
+      },
+      "ledBarId": 8,
+      "id": 14,
+      "isStartPoint": true,
+      "sibling": 15,
+      "linkedHandle": 18,
+      "cable": {
+        "startHandle": 18,
+        "endHandle": 14,
+        "id": "o9gkuvfhe"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1870.3553390593274,
+        "y": 424.3553390593273
+      },
+      "ledBarId": 8,
+      "id": 15,
+      "isStartPoint": false,
+      "sibling": 14,
+      "linkedHandle": 9,
+      "cable": {
+        "startHandle": 15,
+        "endHandle": 9,
+        "id": "r9vf3aijc"
+      }
+    },
+    "ledsPerMeter": "58"
+  },
+  {
+    "id": 9,
+    "startPoint": {
+      "coord": {
+        "x": 2077,
+        "y": 244
+      },
+      "ledBarId": 9,
+      "id": 16,
+      "isStartPoint": true,
+      "sibling": 17,
+      "linkedHandle": null,
+      "cable": {
+        "startHandle": -1,
+        "endHandle": 16,
+        "id": "r6nwz1gxf"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 2077,
+        "y": 644
+      },
+      "ledBarId": 9,
+      "id": 17,
+      "isStartPoint": false,
+      "sibling": 16,
+      "linkedHandle": 11,
+      "cable": {
+        "startHandle": 17,
+        "endHandle": 11,
+        "id": "rf5xacnlx"
+      }
+    },
+    "ledsPerMeter": "60.75"
+  },
+  {
+    "id": 10,
+    "startPoint": {
+      "coord": {
+        "x": 1731.6446609406726,
+        "y": 356.6446609406727
+      },
+      "ledBarId": 10,
+      "id": 18,
+      "isStartPoint": true,
+      "sibling": 19,
+      "linkedHandle": 14,
+      "cable": {
+        "startHandle": 18,
+        "endHandle": 14,
+        "id": "o9gkuvfhe"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1802.3553390593274,
+        "y": 427.3553390593274
+      },
+      "ledBarId": 10,
+      "id": 19,
+      "isStartPoint": false,
+      "sibling": 18,
+      "linkedHandle": 24,
+      "cable": {
+        "startHandle": 24,
+        "endHandle": 19,
+        "id": "wmvvva2ay"
+      }
+    },
+    "ledsPerMeter": "57"
+  },
+  {
+    "id": 11,
+    "startPoint": {
+      "coord": {
+        "x": 1661.6446609406726,
+        "y": 358.64466094067274
+      },
+      "ledBarId": 11,
+      "id": 20,
+      "isStartPoint": true,
+      "sibling": 21,
+      "linkedHandle": 3,
+      "cable": {
+        "startHandle": 3,
+        "endHandle": 20,
+        "id": "ec2b3cno4"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1732.3553390593274,
+        "y": 429.3553390593274
+      },
+      "ledBarId": 11,
+      "id": 21,
+      "isStartPoint": false,
+      "sibling": 20,
+      "linkedHandle": 26,
+      "cable": {
+        "startHandle": 21,
+        "endHandle": 26,
+        "id": "2cphsystk"
+      }
+    },
+    "ledsPerMeter": "59"
+  },
+  {
+    "id": 12,
+    "startPoint": {
+      "coord": {
+        "x": 1872.3553390593274,
+        "y": 453.64466094067257
+      },
+      "ledBarId": 12,
+      "id": 22,
+      "isStartPoint": true,
+      "sibling": 23,
+      "linkedHandle": 10,
+      "cable": {
+        "startHandle": 10,
+        "endHandle": 22,
+        "id": "9lr28xcde"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1801.6446609406726,
+        "y": 524.3553390593273
+      },
+      "ledBarId": 12,
+      "id": 23,
+      "isStartPoint": false,
+      "sibling": 22,
+      "linkedHandle": 25,
+      "cable": {
+        "startHandle": 23,
+        "endHandle": 25,
+        "id": "x4xbv2ylr"
+      }
+    },
+    "ledsPerMeter": "58"
+  },
+  {
+    "id": 13,
+    "startPoint": {
+      "coord": {
+        "x": 1802.3553390593274,
+        "y": 455.64466094067257
+      },
+      "ledBarId": 13,
+      "id": 24,
+      "isStartPoint": true,
+      "sibling": 25,
+      "linkedHandle": 19,
+      "cable": {
+        "startHandle": 24,
+        "endHandle": 19,
+        "id": "wmvvva2ay"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1731.6446609406726,
+        "y": 526.3553390593273
+      },
+      "ledBarId": 13,
+      "id": 25,
+      "isStartPoint": false,
+      "sibling": 24,
+      "linkedHandle": 23,
+      "cable": {
+        "startHandle": 23,
+        "endHandle": 25,
+        "id": "x4xbv2ylr"
+      }
+    },
+    "ledsPerMeter": "57"
+  },
+  {
+    "id": 14,
+    "startPoint": {
+      "coord": {
+        "x": 1733.3553390593272,
+        "y": 457.64466094067285
+      },
+      "ledBarId": 14,
+      "id": 26,
+      "isStartPoint": true,
+      "sibling": 27,
+      "linkedHandle": 21,
+      "cable": {
+        "startHandle": 21,
+        "endHandle": 26,
+        "id": "2cphsystk"
+      }
+    },
+    "endPoint": {
+      "coord": {
+        "x": 1662.6446609406726,
+        "y": 528.3553390593273
+      },
+      "ledBarId": 14,
+      "id": 27,
+      "isStartPoint": false,
+      "sibling": 26,
+      "linkedHandle": 4,
+      "cable": {
+        "startHandle": 27,
+        "endHandle": 4,
+        "id": "4zrk0lbyp"
+      }
+    },
+    "ledsPerMeter": "59"
+  }
+]

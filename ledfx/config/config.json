@@ -1,8 +1,5 @@
 {
-    "audio": {
-        "audio_device": 1,
-        "min_volume": 0.2
-    },
+    "audio": {},
     "configuration_version": "2.3.0",
     "create_segments": false,
     "dev_mode": false,
@@ -12,15 +9,15 @@
                 "center_offset": 0,
                 "create_segments": false,
                 "icon_name": "wled",
-                "ip_address": "192.168.0.123",
-                "name": "wled1",
-                "pixel_count": 969,
+                "ip_address": "192.168.2.78",
+                "name": "wled-new",
+                "pixel_count": 1084,
                 "refresh_rate": 62,
                 "rgbw_led": false,
                 "sync_mode": "DDP",
                 "timeout": 1
             },
-            "id": "wled1",
+            "id": "wled-new",
             "type": "wled"
         },
         {
@@ -28,15 +25,15 @@
                 "center_offset": 0,
                 "create_segments": false,
                 "icon_name": "wled",
-                "ip_address": "192.168.0.124",
-                "name": "wled2",
-                "pixel_count": 1087,
+                "ip_address": "192.168.2.99",
+                "name": "wled-old",
+                "pixel_count": 957,
                 "refresh_rate": 62,
                 "rgbw_led": false,
                 "sync_mode": "DDP",
                 "timeout": 1
             },
-            "id": "wled2",
+            "id": "wled-old",
             "type": "wled"
         }
     ],
@@ -344,24 +341,7 @@
             "scene_payload": null,
             "scene_puturl": null,
             "scene_tags": null,
-            "virtuals": {
-                "all": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "blur": 0,
-                        "brightness": 1,
-                        "color": "#000000",
-                        "flip": false,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1
-                    },
-                    "type": "singleColor"
-                }
-            }
+            "virtuals": {}
         },
         "purple-forward": {
             "name": "purple forward",
@@ -929,24 +909,7 @@
             "scene_payload": null,
             "scene_puturl": null,
             "scene_tags": null,
-            "virtuals": {
-                "all": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                }
-            }
+            "virtuals": {}
         },
         "strobe-double-time": {
             "name": "strobe double time",
@@ -955,24 +918,7 @@
             "scene_payload": null,
             "scene_puturl": null,
             "scene_tags": null,
-            "virtuals": {
-                "all": {
-                    "config": {
-                        "background_brightness": 1,
-                        "background_color": "#000000",
-                        "beat_decay": 2,
-                        "blur": 0,
-                        "brightness": 1,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/2 (.-. )"
-                    },
-                    "type": "strobe"
-                }
-            }
+            "virtuals": {}
         },
         "strobe-small-arrows": {
             "name": "strobe small arrows",
@@ -1377,136 +1323,6 @@
                 "center_offset": 0,
                 "frequency_max": 15000,
                 "frequency_min": 20,
-                "icon_name": "wled",
-                "mapping": "span",
-                "max_brightness": 1.0,
-                "name": "wled",
-                "preview_only": false,
-                "rows": 1,
-                "transition_mode": "Add",
-                "transition_time": 0.4
-            },
-            "effect": {
-                "config": {
-                    "background_brightness": 1.0,
-                    "background_color": "#000000",
-                    "beat_decay": 2.0,
-                    "blur": 0.0,
-                    "brightness": 1.0,
-                    "flip": false,
-                    "gradient": "#ffffff",
-                    "gradient_roll": 0.0,
-                    "mirror": false,
-                    "strobe_decay": 1.5,
-                    "strobe_frequency": "1/2 (.-. )"
-                },
-                "type": "strobe"
-            },
-            "effects": {
-                "blade_power_plus": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "blur": 2.0,
-                        "brightness": 1.0,
-                        "decay": 0.7,
-                        "flip": false,
-                        "frequency_range": "Lows (beat+bass)",
-                        "gradient": "linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 120, 0) 14%, rgb(255, 200, 0) 28%, rgb(0, 255, 0) 42%, rgb(0, 199, 140) 56%, rgb(0, 0, 255) 70%, rgb(128, 0, 128) 84%, rgb(255, 0, 178) 98%)",
-                        "gradient_roll": 0.0,
-                        "invert_roll": false,
-                        "mirror": false,
-                        "multiplier": 0.5
-                    },
-                    "type": "blade_power_plus"
-                },
-                "gradient": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "flip": false,
-                        "gradient": "linear-gradient(90deg, rgb(255, 0, 0) 0%, rgb(255, 120, 0) 14%, rgb(255, 200, 0) 28%, rgb(0, 255, 0) 42%, rgb(0, 199, 140) 56%, rgb(0, 0, 255) 70%, rgb(128, 0, 128) 84%, rgb(255, 0, 178) 98%)",
-                        "gradient_roll": 0.0,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1.0
-                    },
-                    "type": "gradient"
-                },
-                "real_strobe": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "bass_strobe_decay_rate": 0.5,
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "color_shift_delay": 1.0,
-                        "color_step": 0.0625,
-                        "flip": false,
-                        "gradient": "Dancefloor",
-                        "gradient_roll": 0.0,
-                        "mirror": false,
-                        "strobe_color": "#ffffff",
-                        "strobe_decay_rate": 0.5,
-                        "strobe_width": 10
-                    },
-                    "type": "real_strobe"
-                },
-                "singleColor": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#fa0000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "color": "#000000",
-                        "flip": false,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1.0
-                    },
-                    "type": "singleColor"
-                },
-                "strobe": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "beat_decay": 2.0,
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0.0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/2 (.-. )"
-                    },
-                    "type": "strobe"
-                }
-            },
-            "id": "wled",
-            "is_device": "wled",
-            "segments": [
-                [
-                    "wled1",
-                    0,
-                    968,
-                    false
-                ]
-            ]
-        },
-        {
-            "active": false,
-            "auto_generated": false,
-            "config": {
-                "center_offset": 0,
-                "frequency_max": 15000,
-                "frequency_min": 20,
                 "icon_name": "mdi:led-strip-variant",
                 "mapping": "span",
                 "max_brightness": 1.0,
@@ -1777,7 +1593,7 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     0,
                     243,
                     false
@@ -1806,18 +1622,15 @@
                     "background_color": "#000000",
                     "blur": 0.0,
                     "brightness": 1.0,
-                    "flip": false,
-                    "high_color": "#0000ff",
-                    "high_sensitivity": 0.1,
-                    "lows_color": "#ffffff",
-                    "lows_sensitivity": 0.1,
-                    "mids_color": "#ff0000",
-                    "mids_sensitivity": 0.05,
-                    "mirror": true,
-                    "pulse_strip": "Off",
-                    "raindrop_animation": "Ripple"
+                    "color": "#ff00ff",
+                    "flip": true,
+                    "mirror": false,
+                    "modulate": false,
+                    "modulation_effect": "sine",
+                    "modulation_speed": 0.5,
+                    "speed": 1.0
                 },
-                "type": "rain"
+                "type": "singleColor"
             },
             "effects": {
                 "bar": {
@@ -2048,6 +1861,22 @@
                     },
                     "type": "scroll"
                 },
+                "singleColor": {
+                    "config": {
+                        "background_brightness": 1.0,
+                        "background_color": "#000000",
+                        "blur": 0.0,
+                        "brightness": 1.0,
+                        "color": "#ff00ff",
+                        "flip": true,
+                        "mirror": false,
+                        "modulate": false,
+                        "modulation_effect": "sine",
+                        "modulation_speed": 0.5,
+                        "speed": 1.0
+                    },
+                    "type": "singleColor"
+                },
                 "strobe": {
                     "config": {
                         "background_brightness": 1.0,
@@ -2069,13 +1898,13 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     485,
                     537,
                     true
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     651,
                     707,
                     true
@@ -2083,7 +1912,7 @@
             ]
         },
         {
-            "active": false,
+            "active": true,
             "auto_generated": false,
             "config": {
                 "center_offset": 0,
@@ -2383,15 +2212,15 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     244,
-                    485,
+                    484,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     727,
-                    968,
+                    956,
                     false
                 ]
             ]
@@ -2636,13 +2465,13 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     541,
                     593,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     594,
                     650,
                     false
@@ -2650,7 +2479,7 @@
             ]
         },
         {
-            "active": false,
+            "active": true,
             "auto_generated": false,
             "config": {
                 "center_offset": 0,
@@ -2840,15 +2669,15 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled2",
+                    "wled-new",
                     486,
                     544,
                     false
                 ],
                 [
-                    "wled2",
+                    "wled-new",
                     545,
-                    601,
+                    595,
                     false
                 ]
             ]
@@ -3291,21 +3120,21 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled2",
+                    "wled-new",
                     1,
                     241,
                     true
                 ],
                 [
-                    "wled2",
+                    "wled-new",
                     836,
-                    1086,
+                    1083,
                     true
                 ]
             ]
         },
         {
-            "active": true,
+            "active": false,
             "auto_generated": false,
             "config": {
                 "center_offset": 0,
@@ -3636,13 +3465,13 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled2",
+                    "wled-new",
                     242,
                     478,
                     false
                 ],
                 [
-                    "wled2",
+                    "wled-new",
                     596,
                     835,
                     false
@@ -4043,15 +3872,15 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     243,
                     422,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     766,
-                    968,
+                    956,
                     false
                 ]
             ]
@@ -4567,49 +4396,49 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     427,
                     485,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     727,
                     784,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     486,
                     544,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     659,
                     726,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     545,
                     601,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     602,
                     658,
                     false
                 ],
                 [
-                    "wled2",
+                    "wled-new",
                     486,
                     544,
                     true
                 ],
                 [
-                    "wled2",
+                    "wled-new",
                     545,
                     601,
                     false
@@ -4744,249 +4573,15 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled1",
+                    "wled-old",
                     423,
                     481,
                     false
                 ],
                 [
-                    "wled1",
+                    "wled-old",
                     708,
                     765,
-                    false
-                ]
-            ]
-        },
-        {
-            "active": true,
-            "auto_generated": false,
-            "config": {
-                "center_offset": 0,
-                "frequency_max": 15000,
-                "frequency_min": 20,
-                "icon_name": "mdi:led-strip-variant",
-                "mapping": "span",
-                "max_brightness": 1.0,
-                "name": "all",
-                "preview_only": false,
-                "rows": 1,
-                "transition_mode": "Add",
-                "transition_time": 0.4
-            },
-            "effect": {
-                "config": {
-                    "background_brightness": 1.0,
-                    "background_color": "#000000",
-                    "blur": 0.0,
-                    "brightness": 1.0,
-                    "color": "#000000",
-                    "flip": false,
-                    "mirror": false,
-                    "modulate": false,
-                    "modulation_effect": "sine",
-                    "modulation_speed": 0.5,
-                    "speed": 1.0
-                },
-                "type": "singleColor"
-            },
-            "effects": {
-                "singleColor": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "color": "#000000",
-                        "flip": false,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1.0
-                    },
-                    "type": "singleColor"
-                },
-                "strobe": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "beat_decay": 2.0,
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0.0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                }
-            },
-            "id": "all",
-            "is_device": false,
-            "segments": [
-                [
-                    "wled1",
-                    1,
-                    968,
-                    false
-                ],
-                [
-                    "wled2",
-                    1,
-                    1086,
-                    true
-                ]
-            ]
-        },
-        {
-            "active": true,
-            "auto_generated": false,
-            "config": {
-                "center_offset": 0,
-                "frequency_max": 15000,
-                "frequency_min": 20,
-                "icon_name": "mdi:led-strip-variant",
-                "mapping": "span",
-                "max_brightness": 1.0,
-                "name": "wled2",
-                "preview_only": false,
-                "rows": 1,
-                "transition_mode": "Add",
-                "transition_time": 0.4
-            },
-            "effect": {
-                "config": {
-                    "background_brightness": 1.0,
-                    "background_color": "#ff0000",
-                    "blur": 0.0,
-                    "brightness": 1.0,
-                    "color": "#ff0000",
-                    "flip": false,
-                    "mirror": false,
-                    "modulate": false,
-                    "modulation_effect": "sine",
-                    "modulation_speed": 0.5,
-                    "speed": 1.0
-                },
-                "type": "singleColor"
-            },
-            "effects": {
-                "singleColor": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#ff0000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "color": "#ff0000",
-                        "flip": false,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1.0
-                    },
-                    "type": "singleColor"
-                },
-                "strobe": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "beat_decay": 2.0,
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "flip": false,
-                        "gradient": "#ffffff",
-                        "gradient_roll": 0.0,
-                        "mirror": false,
-                        "strobe_decay": 1.5,
-                        "strobe_frequency": "1/1 (.,. )"
-                    },
-                    "type": "strobe"
-                }
-            },
-            "id": "wled2",
-            "is_device": false,
-            "segments": [
-                [
-                    "wled2",
-                    0,
-                    1086,
-                    false
-                ]
-            ]
-        },
-        {
-            "active": true,
-            "auto_generated": false,
-            "config": {
-                "center_offset": 0,
-                "frequency_max": 15000,
-                "frequency_min": 20,
-                "icon_name": "mdi:led-strip-variant",
-                "mapping": "span",
-                "max_brightness": 1.0,
-                "name": "wled1",
-                "preview_only": false,
-                "rows": 1,
-                "transition_mode": "Add",
-                "transition_time": 0.4
-            },
-            "effect": {
-                "config": {
-                    "background_brightness": 1.0,
-                    "background_color": "#000000",
-                    "blur": 0.0,
-                    "brightness": 1.0,
-                    "color": "#00ff00",
-                    "flip": false,
-                    "mirror": false,
-                    "modulate": false,
-                    "modulation_effect": "sine",
-                    "modulation_speed": 0.5,
-                    "speed": 1.0
-                },
-                "type": "singleColor"
-            },
-            "effects": {
-                "rainbow": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "flip": false,
-                        "frequency": 1.0,
-                        "mirror": false,
-                        "speed": 1.0
-                    },
-                    "type": "rainbow"
-                },
-                "singleColor": {
-                    "config": {
-                        "background_brightness": 1.0,
-                        "background_color": "#000000",
-                        "blur": 0.0,
-                        "brightness": 1.0,
-                        "color": "#00ff00",
-                        "flip": false,
-                        "mirror": false,
-                        "modulate": false,
-                        "modulation_effect": "sine",
-                        "modulation_speed": 0.5,
-                        "speed": 1.0
-                    },
-                    "type": "singleColor"
-                }
-            },
-            "id": "wled1",
-            "is_device": false,
-            "segments": [
-                [
-                    "wled1",
-                    0,
-                    968,
                     false
                 ]
             ]
@@ -5207,7 +4802,7 @@
             "is_device": false,
             "segments": [
                 [
-                    "wled2",
+                    "wled-new",
                     242,
                     835,
                     false

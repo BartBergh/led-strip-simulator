@@ -13,9 +13,10 @@ const App: React.FC = () => {
   const [ledsPerMeter, setLedsPerMeter] = useState('');  // LEDs per meter
   const [scale, setScale] = useState('');  // Scale in pixels per meter
   const [, setWebSocketService] = useState<WebSocketService[] | null>(null);
-  const WEBSOCKET_URL1 = 'ws://192.168.0.123/ws';
-  const WEBSOCKET_URL2 = 'ws://192.168.0.124/ws';
+  const websocketURLS = ['ws://192.168.2.78/ws', 'ws://192.168.2.99/ws']
 
+
+  
   // Function to add a new LedBar
   const addLedBar = () => {
     const length = ledBarLength === '' ? 1 : parseFloat(ledBarLength);
@@ -39,27 +40,33 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
-    const webSocketService1 = new WebSocketService(WEBSOCKET_URL1, updateLedDisplay, -1);
-    const webSocketService2 = new WebSocketService(WEBSOCKET_URL2, updateLedDisplay, -2);
+    const webSocketServices: WebSocketService[] = [];
 
-    webSocketService1.connect();
-    webSocketService2.connect();
+    websocketURLS.forEach((url, index) => {
+      const webSocketService = new WebSocketService(url, updateLedDisplay, -index - 1);
+      webSocketService.connect();
+      webSocketServices.push(webSocketService);
+    });
 
-    if (isLightsOn && !webSocketService1 && !webSocketService2) {
-      const newWebSocketService1 = new WebSocketService(WEBSOCKET_URL1, updateLedDisplay);
-      const newWebSocketService2 = new WebSocketService(WEBSOCKET_URL2, updateLedDisplay);
-      newWebSocketService1.connect();
-      newWebSocketService2.connect();
-      setWebSocketService([newWebSocketService1, newWebSocketService2]);
-    } else if (!isLightsOn && webSocketService1) {
-      webSocketService1.disconnect();
-      webSocketService2.disconnect();
-      setWebSocketService(null); // Clear the WebSocket service instance
+    if (isLightsOn && webSocketServices.length === 0) {
+      const newWebSocketServices: WebSocketService[] = [];
+      websocketURLS.forEach((url, index) => {
+        const newWebSocketService = new WebSocketService(url, updateLedDisplay, -index - 1);
+        newWebSocketService.connect();
+        newWebSocketServices.push(newWebSocketService);
+      });
+      setWebSocketService(newWebSocketServices);
+    } else if (!isLightsOn && webSocketServices.length > 0) {
+      webSocketServices.forEach((webSocketService) => {
+        webSocketService.disconnect();
+      });
+      setWebSocketService(null); // Clear the WebSocket service instances
     }
 
     return () => {
-      webSocketService1.disconnect();
-      webSocketService2.disconnect();
+      webSocketServices.forEach((webSocketService) => {
+        webSocketService.disconnect();
+      });
     };
   }, [isLightsOn]);
 

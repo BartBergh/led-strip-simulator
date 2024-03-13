@@ -12,6 +12,8 @@ interface AppBarProps {
     setIsCableEditingMode: React.Dispatch<React.SetStateAction<boolean>>;
     isLightsOn: boolean;
     setIsLightsOn: React.Dispatch<React.SetStateAction<boolean>>;
+    isInfoTextOn: boolean;
+    setIsInfoTextOn: React.Dispatch<React.SetStateAction<boolean>>;
     onAddLedBar: () => void; 
     ledBarLength: string;
     setLedBarLength: React.Dispatch<React.SetStateAction<string>>;
@@ -21,7 +23,7 @@ interface AppBarProps {
     setScale: React.Dispatch<React.SetStateAction<string>>; 
 }
 
-const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, setIsCableEditingMode, onAddLedBar, ledBarLength, setLedBarLength, ledsPerMeter, setLedsPerMeter, scale, setScale }) => {
+const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditingMode, isInfoTextOn, setIsInfoTextOn, setIsCableEditingMode, onAddLedBar, ledBarLength, setLedBarLength, ledsPerMeter, setLedsPerMeter, scale, setScale }) => {
   const handleCableEditingChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsCableEditingMode(event.target.checked);
   };
@@ -29,6 +31,10 @@ const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditi
   const [menuAnchorEl, setMenuAnchorEl] = React.useState<null | HTMLElement>(null);
   const isMenuOpen = Boolean(menuAnchorEl);
 
+  const handleInfoTextChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setIsInfoTextOn(event.target.checked);
+  };
+  
   const handleLightsChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setIsLightsOn(event.target.checked);
   };
@@ -142,13 +148,13 @@ const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditi
         <Typography variant="h6" sx={{ flexGrow: 1 }}>
           LED Strip Simulator
         </Typography>
-        <TextField
+        {/* <TextField
             label="Scale"
             variant="outlined"
             value={scale}
             onChange={(e) => setScale(e.target.value)}
             style={{ margin: '0 10px' }}
-        />
+        /> */}
         <TextField
           label="LED Bar Length (m)"
           variant="outlined"
@@ -174,6 +180,10 @@ const AppBar: React.FC<AppBarProps> = ({ isLightsOn, setIsLightsOn, isCableEditi
           <FormControlLabel
             control={<Switch checked={isLightsOn} onChange={handleLightsChange} onKeyDown={handleKeyDown}/>}
             label="Lights"
+          />
+          <FormControlLabel
+            control={<Switch checked={isInfoTextOn} onChange={handleInfoTextChange} onKeyDown={handleKeyDown}/>}
+            label="Info Text"
           />
         </FormGroup>
       </Toolbar>

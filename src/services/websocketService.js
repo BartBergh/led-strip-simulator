@@ -35,7 +35,6 @@ class WebSocketService {
             const data = JSON.parse(event.data);
             if (data.info) {
               this.amountOfLeds = data.info.leds.count;
-              console.log('Amount of leds:', this.amountOfLeds);
             }
           }
         

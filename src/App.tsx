@@ -2,21 +2,20 @@ import React, { useState, useEffect } from 'react';
 import AppBar from './components/AppBar/AppBar';
 import { CssBaseline } from '@mui/material';
 import PixiCanvas from './components/PixiCanvas/PixiCanvas';
-import { meterToPixels, applyColors } from './components/PixiCanvas/PixiCanvas';
+import { meterToPixels, applyColors, createPowerSource } from './components/PixiCanvas/PixiCanvas';
 import WebSocketService from './services/websocketService';
 
 const App: React.FC = () => {
   const [isCableEditingMode, setIsCableEditingMode] = useState(false);
   const [isLightsOn, setIsLightsOn] = useState(false);
+  const [isInfoTextOn, setIsInfoTextOn] = useState(true);
   const [ledBarConfigs, setLedBarConfigs] = useState<LedBarData[]>([]);
   const [ledBarLength, setLedBarLength] = useState('');  // Length in meters
   const [ledsPerMeter, setLedsPerMeter] = useState('');  // LEDs per meter
   const [scale, setScale] = useState('');  // Scale in pixels per meter
   const [, setWebSocketService] = useState<WebSocketService[] | null>(null);
-  const websocketURLS = ['ws://192.168.2.78/ws', 'ws://192.168.2.99/ws']
+  const [websocketURLS, setWebsocketURLS] = useState<string[]>([]);
 
-
-  
   // Function to add a new LedBar
   const addLedBar = () => {
     const length = ledBarLength === '' ? 1 : parseFloat(ledBarLength);
@@ -40,6 +39,21 @@ const App: React.FC = () => {
   });
 
   useEffect(() => {
+    const fetchConfig = async () => {
+      try {
+        const path = process.env.PUBLIC_URL + '/config.json';
+        const response = await fetch(path); // Adjust the path if necessary
+        const config = await response.json();
+        setWebsocketURLS(config.websocketURLS);
+      } catch (error) {
+        console.error("Failed to load configuration", error);
+      }
+    };
+
+    fetchConfig();
+  }, []);
+
+  useEffect(() => {
     const webSocketServices: WebSocketService[] = [];
 
     websocketURLS.forEach((url, index) => {
@@ -54,6 +68,7 @@ const App: React.FC = () => {
         const newWebSocketService = new WebSocketService(url, updateLedDisplay, -index - 1);
         newWebSocketService.connect();
         newWebSocketServices.push(newWebSocketService);
+        
       });
       setWebSocketService(newWebSocketServices);
     } else if (!isLightsOn && webSocketServices.length > 0) {
@@ -68,12 +83,24 @@ const App: React.FC = () => {
         webSocketService.disconnect();
       });
     };
-  }, [isLightsOn]);
+  }, [isLightsOn, websocketURLS]);
+
+  useEffect(() => {
+    websocketURLS.forEach((url, index) => {
+      initPowerSource(-index - 1, url);
+    });
+  }, [websocketURLS]);
+  
 
   function updateLedDisplay(ledData: number[], id:number): void {
     // Update your PixiJS visualization with the new LED data
     applyColors(ledData, id);
-   }
+  }
+
+  function initPowerSource(id:number, ip:string){
+    createPowerSource(id, ip);
+  }
+
 
   interface LedBarData {
     start: {
@@ -97,6 +124,8 @@ const App: React.FC = () => {
         setIsCableEditingMode={setIsCableEditingMode}
         isLightsOn={isLightsOn}
         setIsLightsOn={setIsLightsOn}
+        isInfoTextOn={isInfoTextOn}
+        setIsInfoTextOn={setIsInfoTextOn}
         ledBarLength={ledBarLength}
         setLedBarLength={setLedBarLength}
         ledsPerMeter={ledsPerMeter}
@@ -106,10 +135,11 @@ const App: React.FC = () => {
         onAddLedBar={addLedBar}
       />
       <div>
-            <PixiCanvas ledBarConfigs={ledBarConfigs} isCableEditingMode={isCableEditingMode} isLightsOn={isLightsOn}/>
+            <PixiCanvas ledBarConfigs={ledBarConfigs} isCableEditingMode={isCableEditingMode} isLightsOn={isLightsOn} isInfoTextOn={isInfoTextOn}/>
       </div>
     </>
   );
 };
 
 export default App;
+

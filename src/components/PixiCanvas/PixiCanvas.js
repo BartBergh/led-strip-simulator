@@ -6,16 +6,27 @@ let app = null;
 let activeDragItem = null;
 let dragTarget = null;
 let isCableEditing = false;
+let isInfoText = false;
 let activeCable = null
-let powerSource1 = null;
-let powerSource2 = null;
-// This could be in a constants.js file or similar
 
 const LEDS_PER_METER = 58;  // 1 meter = 200 pixels
-let scale = 0.5;
-let ledBarHeight = 15 * scale; // pixels
-let meterToPixels = 200 * scale;  // 1 meter = 200 pixels
 
+let scale = 0.5;
+let meterToPixels = 200 * scale;  // 1 meter = 200 pixels
+let ledBarHeight = 15 * scale;
+
+// Read the scale from public/config.json
+fetch(process.env.PUBLIC_URL + '/config.json')
+    .then(response => response.json())
+    .then(data => {
+        console.log('Scale:', data.scale);
+        scale = data.scale;
+        meterToPixels = 200 * scale;
+        ledBarHeight = 15 * scale;
+    })
+    .catch(error => {
+        console.error('Error reading scale from config.json:', error);
+    });
 
 
 function init() {
@@ -23,8 +34,8 @@ function init() {
     app.current.stage.hitArea = app.current.screen;
     app.current.stage.on('pointerup', onDragEnd);
     app.current.stage.on('pointerupoutside', onDragEnd);
-    addPicture('grondplan.png');
-
+    // const imagePath = process.env.PUBLIC_URL + '/groundplan.png';
+    // addPicture(imagePath);
 }
 
 function addPicture(imagePath) {
@@ -65,6 +76,8 @@ function saveLayout() {
 
 function applyColors(colors, id) {
     const powerSource = inventoryManager.powersources.find(p => p.id === id);
+    console.log('amount of colors', colors.length);
+    console.log('amount of leds', globalLedManager.orderedLeds[id].length);
     globalLedManager.applyColors(powerSource, colors);
 }
 
@@ -111,9 +124,10 @@ function loadLayout(ledBarConfigs) {
 
 // powersource is a small square with 1 unmovable handle. it will store the ledbarid of the connected ledbar (if any)
 class PowerSource {
-    constructor(coord, id=-1, color=0xFFFF00) {
+    constructor(coord, id=-1, color=0xFFFF00, ip='0.0.0.0') {
         this.coord = coord; // { x: number, y: number }
         this.id = id;
+        this.ip = ip;
         this.handle = new Handle(coord, this.id, color, this.id, true);
         inventoryManager.registerHandle(this.handle);
         console.log(inventoryManager.handles);
@@ -121,6 +135,10 @@ class PowerSource {
 
     updatePosition(newCoord) {
         this.coord = newCoord;
+    }
+
+    setIp(ip) {
+        this.ip = ip;
     }
 
     save() {
@@ -390,7 +408,7 @@ class LedBar {
         let ledSize = lengthInMeters * meterToPixels / numberOfLeds;
     
         let diffuser = new PIXI.Graphics();
-        diffuser.beginFill(0xffffff);
+        diffuser.beginFill(0xffffff, 0.5);
         diffuser.drawRect(0, 0, numberOfLeds * ledSize, ledBarHeight);
         diffuser.endFill();
     
@@ -423,6 +441,10 @@ class LedBar {
     
         text.x = this.distance / 2 - text.width / 2;
         text.y = -20;
+
+        if (!isInfoText){
+            text.alpha = 0;
+        }
 
         let blurFilter = new PIXI.BlurFilter();
         blurFilter.blur = 9*scale;
@@ -811,7 +833,7 @@ class Cable {
         const distance = Math.sqrt(dx * dx + dy * dy);
     
         // Adjust these values to change the curvature and loop size
-        const curveDepth = 0;
+        const curveDepth = 20;
         const loopTrigger = 0;
         const loopRadius = 170;
     
@@ -986,7 +1008,19 @@ function onDragMove(event) {
 
 }
 
-const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
+function createPowerSource(id, ip) {
+    console.log("creating power source with id: " + id + " and ip: " + ip )
+    const colors = [0xFF0000, 0x00FF00, 0x0000FF, 0xFFFF00, 0xFF00FF, 0x00FFFF];
+    // Map the ID to an index in the colors array. Use modulo to wrap around if there are more IDs than colors.
+    const colorIndex = Math.abs(id + 1) % colors.length;
+    const color = colors[colorIndex];
+    const coord = { x: 10 + Math.abs(id+1) * 100, y: 10 };
+
+    const powerSource = new PowerSource(coord, id, color, ip);
+    inventoryManager.registerPowerSource(powerSource);
+}
+
+const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn, isInfoTextOn }) => {
     const pixiContainer = useRef(null);
     app = useRef(null);
     useEffect(() => {
@@ -1001,11 +1035,6 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
             });
             pixiContainer.current.appendChild(app.current.view);
             init();
-
-            powerSource1 = new PowerSource({ x: 10, y: 10 }, -1, 0xFFFF00);
-            powerSource2 = new PowerSource({ x: 20, y: 10 }, -2, 0xFF00FF);
-            inventoryManager.registerPowerSource(powerSource1);
-            inventoryManager.registerPowerSource(powerSource2);
 
             // Handle window resize
             window.addEventListener('resize', () => {
@@ -1044,6 +1073,20 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
     }, [isCableEditingMode]);
 
     useEffect(() => {
+        isInfoText = isInfoTextOn;
+        if(isInfoText){
+            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                value.ledBar.diffuser.children[0].alpha = 1;
+            }
+        } else {
+            for (const [, value] of Object.entries(inventoryManager.ledBars)) {
+                value.ledBar.diffuser.children[0].alpha = 0;
+            }
+        }
+
+    }, [isInfoTextOn]);
+
+    useEffect(() => {
         // for each powerSource
         for (const [, powerSource] of Object.entries(inventoryManager.powersources)) {
             if (powerSource.handle.linkedHandle !== null){
@@ -1058,19 +1101,11 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
                         value.point.alpha = 0.1; 
                     }
                 }
-                for (const [, value] of Object.entries(inventoryManager.ledBars)) {
-                    value.ledBar.diffuser.children[0].alpha = 0;
-                }
-
             } else {
                 app.current.renderer.backgroundColor = 0x333333;
                 for (const [, value] of Object.entries(inventoryManager.handles)) {
                     value.point.alpha = 1;
-                }
-                for (const [, value] of Object.entries(inventoryManager.ledBars)) {
-                    value.ledBar.diffuser.children[0].alpha = 1;
-                }
-                
+                } 
             }
         }
         
@@ -1082,4 +1117,4 @@ const PixiCanvas = ({ ledBarConfigs, isCableEditingMode, isLightsOn }) => {
 };
 
 export default PixiCanvas;
-export { saveLayout , loadLayout, applyColors, meterToPixels};
+export { saveLayout , loadLayout, applyColors, meterToPixels, createPowerSource};
